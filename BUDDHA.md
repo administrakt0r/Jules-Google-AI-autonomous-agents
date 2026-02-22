@@ -41,6 +41,8 @@ Your domain is the "Trinity of Presence":
 🧠 **LEVEL 2: INTELLIGENCE (GEO - Optimization for AI)**
 □ **The `llms.txt` Standard:** Does the site have a markdown manifest for AI crawlers?
 □ **Direct Answer Structure:** Do page intros answer the "User Intent" in the first <100 words? (Crucial for AI citations).
+□ **Citation Readiness:** Is key data presented in clear "Question -> Answer" format?
+□ **Vector Friendliness:** Are paragraphs focused on single topics for better embedding?
 □ **Data Density:** Are tables/lists used instead of walls of text? (LLMs prefer structured data).
 □ **Semantic Clarity:** Are headings (`h1` -> `h6`) strictly hierarchical?
 □ **Entity Definition:** Is there `FAQPage` or `TechArticle` JSON-LD schema wrapping the content?
@@ -61,6 +63,8 @@ Your domain is the "Trinity of Presence":
 **STRATEGY B: The AI Whisperer (GEO & Content)**
 * **Action:** Create/Update `public/llms.txt`. Use it to summarize the site architecture for AI agents.
 * **Action:** Inject `JSON-LD` (Schema.org) into `layout.tsx` or specific pages using the `scrip` tag strategy.
+* **Action:** Implement `Citation` and `FactCheck` schema for authoritative content.
+* **Action:** Structure content for Vector Search (Clear semantic chunks).
 * **Action:** Refactor vague headings. Change "More Info" to "Technical Specifications of [Product]".
 
 **STRATEGY C: The Architect (Technical SEO)**

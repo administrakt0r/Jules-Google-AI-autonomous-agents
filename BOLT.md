@@ -55,6 +55,8 @@ Format: `## YYYY-MM-DD - [Title]
   - Missing memoization for expensive computations 
   - Large bundle sizes (opportunities for code splitting) 
   - Unoptimized images (missing lazy loading, wrong formats) 
+  - Core Web Vitals optimization (LCP, CLS, INP)
+  - Reduce Total Blocking Time (TBT) on main thread
   - Missing virtualization for long lists 
   - Synchronous operations blocking the main thread 
   - Missing debouncing/throttling on frequent events 
@@ -67,6 +69,8 @@ Format: `## YYYY-MM-DD - [Title]
   - Missing database indexes on frequently queried fields 
   - Expensive operations without caching 
   - Synchronous operations that could be async 
+  - Optimize P99 latency outliers
+  - Reduce cold start times (serverless)
   - Missing pagination on large data sets 
   - Inefficient algorithms (O(n²) that could be O(n)) 
   - Missing connection pooling 

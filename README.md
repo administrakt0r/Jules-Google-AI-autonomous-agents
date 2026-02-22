@@ -47,6 +47,12 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 | 😎 **Shtef** | Next.js | [📖 Shtef Guide](SHTEF.md) | Senior Next.js optimization | ✅ Active |
 | 🐳 **Docker** | DevOps | [📖 Docker Guide](DOCKER.md) | Container optimization | ✅ Active |
 | ☸️ **Kubernetes**| DevOps | [📖 Kubernetes Guide](KUBERNETES.md) | K8s deployment & security | ✅ Active |
+| 🗄️ **Database** | Database | [📖 Database Guide](DATABASE.md) | Query optimization & schema | ✅ Active |
+| 🔄 **CI/CD** | DevOps | [📖 CI/CD Guide](CICD.md) | Pipeline optimization | ✅ Active |
+| 📊 **Monitoring** | Observability | [📖 Monitoring Guide](MONITORING.md) | Logging & alerting | ✅ Active |
+| 🔌 **API** | Backend | [📖 API Guide](API.md) | API design & security | ✅ Active |
+| 📱 **Mobile** | Mobile | [📖 Mobile Guide](MOBILE.md) | React Native optimization | ✅ Active |
+| 🧪 **Testing** | QA | [📖 Testing Guide](TESTING.md) | Test coverage & strategy | ✅ Active |
 | 🚀 **Jules** | Meta-Agent | [📖 Jules Guide](JULES.md) | Agent creation & enhancement | ✅ Active |
 
 ### 📋 Agent Deep Dives
@@ -113,6 +119,48 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 - **Logging:** Maintains `.jules/kubernetes-progress.md` for cluster optimizations
 - **Progress:** Tracks configuration improvements and security hardening
 - **When to use:** Deployment updates, cluster audits, scaling configuration
+
+#### 🗄️ [Database](DATABASE.md) - Data Architect
+**Perfect for:** Applications with complex queries, slow database performance, or schema scaling needs
+- **Focus:** Query optimization, indexing strategies, schema design, data integrity
+- **Logging:** Maintains `.jules/database-progress.md` for query improvements
+- **Progress:** Tracks index usage and slow query resolution
+- **When to use:** Weekly DB health checks, before migrations, analyzing slow endpoints
+
+#### 🔄 [CI/CD](CICD.md) - Pipeline Master
+**Perfect for:** Teams with slow build times, flaky tests, or deployment reliability issues
+- **Focus:** Build speed, pipeline reliability, caching strategies, automation
+- **Logging:** Maintains `.jules/cicd-progress.md` for pipeline metrics
+- **Progress:** Tracks build time reductions and reliability improvements
+- **When to use:** Pipeline failures, optimizing build times, setting up new workflows
+
+#### 📊 [Monitoring](MONITORING.md) - Observability Eye
+**Perfect for:** Systems needing better visibility, alerting tuning, or logging strategies
+- **Focus:** Structured logging, metric definition, alert noise reduction, tracing
+- **Logging:** Maintains `.jules/monitoring-progress.md` for observability gaps
+- **Progress:** Tracks alert signal-to-noise ratio and dashboard coverage
+- **When to use:** Post-incident reviews, setting up SLIs/SLOs, reducing log noise
+
+#### 🔌 [API](API.md) - Interface Guardian
+**Perfect for:** REST/GraphQL API development, public-facing APIs, and microservices
+- **Focus:** API consistency, input validation, documentation (OpenAPI), versioning
+- **Logging:** Maintains `.jules/api-progress.md` for contract improvements
+- **Progress:** Tracks API consistency and documentation coverage
+- **When to use:** New endpoint creation, API refactoring, security audits
+
+#### 📱 [Mobile](MOBILE.md) - App Optimizer
+**Perfect for:** React Native applications requiring native-like performance and polish
+- **Focus:** Frame rate optimization, bundle size, touch responsiveness, offline support
+- **Logging:** Maintains `.jules/mobile-progress.md` for app performance
+- **Progress:** Tracks FPS improvements and bundle size reduction
+- **When to use:** UI jankiness, release preparation, upgrading React Native
+
+#### 🧪 [Testing](TESTING.md) - QA Strategist
+**Perfect for:** Projects with low coverage, flaky tests, or slow test suites
+- **Focus:** Unit/Integration/E2E testing, test reliability, coverage improvement
+- **Logging:** Maintains `.jules/testing-progress.md` for test suite health
+- **Progress:** Tracks coverage metrics and flaky test resolution
+- **When to use:** Adding new features, refactoring legacy code, CI failures
 
 #### 🚀 [Jules](JULES.md) - Meta-Agent Architect
 **Perfect for:** Repository maintenance, agent enhancement, and autonomous agent creation
@@ -208,6 +256,24 @@ Each agent is designed for specific optimization tasks:
 
 # For Kubernetes deployment
 ☸️ Kubernetes: Secure and scale K8s resources
+
+# For database optimization
+🗄️ Database: Optimize queries and schema
+
+# For CI/CD pipelines
+🔄 CI/CD: Optimize build and deploy workflows
+
+# For system monitoring
+📊 Monitoring: Improve observability and alerting
+
+# For API design
+🔌 API: Ensure consistent and secure APIs
+
+# For mobile apps
+📱 Mobile: Optimize React Native performance
+
+# For testing strategy
+🧪 Testing: Improve test coverage and reliability
 
 # For repository enhancement and agent creation
 🚀 Jules: Meta-agent for autonomous improvement

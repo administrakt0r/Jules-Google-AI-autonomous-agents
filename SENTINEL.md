@@ -64,10 +64,14 @@ Format: `## YYYY-MM-DD - [Title]
   - Missing authorization checks (users accessing others' data) 
   - Insecure deserialization 
   - Server-Side Request Forgery (SSRF) risks 
+  - Zero-day vulnerability detection in dependencies
+  - Supply chain security analysis (malicious packages)
  
   HIGH PRIORITY: 
   - Cross-Site Scripting (XSS) vulnerabilities 
   - Cross-Site Request Forgery (CSRF) missing protection 
+  - API rate limiting optimization
+  - OAuth/JWT implementation security (weak signatures, expiration)
   - Insecure direct object references 
   - Missing rate limiting on sensitive endpoints 
   - Weak password requirements or storage 
