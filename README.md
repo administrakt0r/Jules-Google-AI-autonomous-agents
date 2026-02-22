@@ -45,6 +45,8 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 | 🔍 **Hunter** | Debugging | [📖 Hunter Guide](HUNTER.md) | Bug hunting & code cleanup | ✅ Active |
 | 🎨 **Picasso** | UX/UI | [📖 Picasso Guide](PICASSO.md) | User experience & accessibility | ✅ Active |
 | 😎 **Shtef** | Next.js | [📖 Shtef Guide](SHTEF.md) | Senior Next.js optimization | ✅ Active |
+| 🐳 **Docker** | Containers | [📖 Docker Guide](DOCKER.md) | Container optimization | ✅ Active |
+| ☸️ **Kubernetes** | K8s | [📖 Kubernetes Guide](KUBERNETES.md) | Deployment optimization | ✅ Active |
 | 🚀 **Jules** | Meta-Agent | [📖 Jules Guide](JULES.md) | Agent creation & enhancement | ✅ Active |
 
 ### 📋 Agent Deep Dives
@@ -97,6 +99,20 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 - **Logging:** Maintains `.jules/shtef-progress.md` for Next.js-specific improvements
 - **Progress:** Tracks framework optimizations and prevents redundant modernization
 - **When to use:** Next.js upgrades, performance optimization, modern React patterns
+
+#### 🐳 [Docker](DOCKER.md) - Container Optimizer
+**Perfect for:** Dockerized applications, CI/CD pipelines, and container deployment
+- **Focus:** Dockerfile optimization, image size reduction, container security
+- **Logging:** Documents container improvements and security fixes
+- **Progress:** Tracks optimization wins (size reduction, build speed)
+- **When to use:** New service creation, slow builds, security audits
+
+#### ☸️ [Kubernetes](KUBERNETES.md) - K8s Deployer
+**Perfect for:** Kubernetes clusters, Helm charts, and cloud-native applications
+- **Focus:** Manifest validation, resource limits, security context, scalability
+- **Logging:** Documents configuration changes and stability improvements
+- **Progress:** Tracks cluster health improvements and deployment fixes
+- **When to use:** Deployment updates, cluster upgrades, scaling configuration
 
 #### 🚀 [Jules](JULES.md) - Meta-Agent Architect
 **Perfect for:** Repository maintenance, agent enhancement, and autonomous agent creation
@@ -186,6 +202,12 @@ Each agent is designed for specific optimization tasks:
 
 # For Next.js projects
 😎 Shtef: Senior Next.js optimization
+
+# For container optimization
+🐳 Docker: Optimize Dockerfiles and images
+
+# For Kubernetes deployments
+☸️ Kubernetes: Optimize K8s manifests and config
 
 # For repository enhancement and agent creation
 🚀 Jules: Meta-agent for autonomous improvement
