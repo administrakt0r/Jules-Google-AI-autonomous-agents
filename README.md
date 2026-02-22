@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Agents](https://img.shields.io/badge/Agents-9-blue.svg)](#-agent-overview)
+[![Agents](https://img.shields.io/badge/Agents-20-blue.svg)](#-agent-overview)
 [![Jules.ai Compatible](https://img.shields.io/badge/Jules.ai-Compatible-purple.svg)](https://jules.ai)
 [![Free AI Tools](https://img.shields.io/badge/Free_AI_Tools-LLM.kiwi-orange.svg)](https://llm.kiwi)
 [![WordPress Hosting](https://img.shields.io/badge/Free_WP_Hosting-WPinEU.com-green.svg)](https://wpineu.com)
@@ -53,6 +53,10 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 | 🔌 **API** | Backend | [📖 API Guide](API.md) | API design & security | ✅ Active |
 | 📱 **Mobile** | Mobile | [📖 Mobile Guide](MOBILE.md) | React Native optimization | ✅ Active |
 | 🧪 **Testing** | QA | [📖 Testing Guide](TESTING.md) | Test coverage & strategy | ✅ Active |
+| 🌐 **Web3** | Blockchain | [📖 Web3 Guide](WEB3.md) | Smart contract & dApp optimization | ✅ Active |
+| 🤖 **AIML** | AI/ML | [📖 AIML Guide](AIML.md) | Model optimization & training | ✅ Active |
+| 🔌 **IoT** | Edge/IoT | [📖 IoT Guide](IOT.md) | Device connectivity & edge logic | ✅ Active |
+| ⚛️ **Quantum**| Future Tech | [📖 Quantum Guide](QUANTUM.md) | Quantum readiness & algorithms | ✅ Active |
 | 🚀 **Jules** | Meta-Agent | [📖 Jules Guide](JULES.md) | Agent creation & enhancement | ✅ Active |
 
 ### 📋 Agent Deep Dives
@@ -161,6 +165,26 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 - **Logging:** Maintains `.jules/testing-progress.md` for test suite health
 - **Progress:** Tracks coverage metrics and flaky test resolution
 - **When to use:** Adding new features, refactoring legacy code, CI failures
+
+#### 🌐 [Web3](WEB3.md) - Blockchain Specialist
+**Perfect for:** dApps, smart contracts, and blockchain integrations
+- **Focus:** Gas optimization, security audits, contract efficiency
+- **When to use:** Smart contract deployment, gas audits, security checks
+
+#### 🤖 [AIML](AIML.md) - Model Specialist
+**Perfect for:** Machine learning pipelines, model inference, and training
+- **Focus:** Inference latency, model quantization, data pipeline efficiency
+- **When to use:** Model deployment, training pipeline optimization
+
+#### 🔌 [IoT](IOT.md) - Edge Specialist
+**Perfect for:** IoT devices, edge computing, and constrained environments
+- **Focus:** Bandwidth optimization, protocol efficiency, device security
+- **When to use:** Device firmware updates, connectivity optimization
+
+#### ⚛️ [Quantum](QUANTUM.md) - Future Tech
+**Perfect for:** Quantum readiness, hybrid algorithms, and simulation
+- **Focus:** Quantum circuit optimization, algorithm readiness, simulation
+- **When to use:** Quantum algorithm development, circuit simulation
 
 #### 🚀 [Jules](JULES.md) - Meta-Agent Architect
 **Perfect for:** Repository maintenance, agent enhancement, and autonomous agent creation
@@ -274,6 +298,18 @@ Each agent is designed for specific optimization tasks:
 
 # For testing strategy
 🧪 Testing: Improve test coverage and reliability
+
+# For Web3/Blockchain
+🌐 Web3: Optimize smart contracts and dApps
+
+# For AI/ML models
+🤖 AIML: Optimize inference and training pipelines
+
+# For IoT/Edge
+🔌 IoT: Optimize device connectivity and bandwidth
+
+# For Quantum readiness
+⚛️ Quantum: Prepare for quantum advantage
 
 # For repository enhancement and agent creation
 🚀 Jules: Meta-agent for autonomous improvement
