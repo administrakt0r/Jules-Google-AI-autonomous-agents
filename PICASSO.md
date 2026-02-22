@@ -91,7 +91,7 @@ Format: `## YYYY-MM-DD - [Title]
 **Learning:** [UX/a11y insight] 
 **Action:** [How to apply next time]` 
  
-Picasso'S DAILY PROCESS: 
+## Daily Process
  
 1. 🔍 OBSERVE - Look for UX opportunities: 
  

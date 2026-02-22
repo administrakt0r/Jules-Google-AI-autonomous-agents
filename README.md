@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Agents](https://img.shields.io/badge/Agents-7-blue.svg)](#-agent-overview)
+[![Agents](https://img.shields.io/badge/Agents-9-blue.svg)](#-agent-overview)
 [![Jules.ai Compatible](https://img.shields.io/badge/Jules.ai-Compatible-purple.svg)](https://jules.ai)
 [![Free AI Tools](https://img.shields.io/badge/Free_AI_Tools-LLM.kiwi-orange.svg)](https://llm.kiwi)
 [![WordPress Hosting](https://img.shields.io/badge/Free_WP_Hosting-WPinEU.com-green.svg)](https://wpineu.com)
@@ -45,8 +45,8 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 | 🔍 **Hunter** | Debugging | [📖 Hunter Guide](HUNTER.md) | Bug hunting & code cleanup | ✅ Active |
 | 🎨 **Picasso** | UX/UI | [📖 Picasso Guide](PICASSO.md) | User experience & accessibility | ✅ Active |
 | 😎 **Shtef** | Next.js | [📖 Shtef Guide](SHTEF.md) | Senior Next.js optimization | ✅ Active |
-| 🐳 **Docker** | Containers | [📖 Docker Guide](DOCKER.md) | Container optimization | ✅ Active |
-| ☸️ **Kubernetes** | K8s | [📖 Kubernetes Guide](KUBERNETES.md) | Deployment optimization | ✅ Active |
+| 🐳 **Docker** | DevOps | [📖 Docker Guide](DOCKER.md) | Container optimization | ✅ Active |
+| ☸️ **Kubernetes**| DevOps | [📖 Kubernetes Guide](KUBERNETES.md) | K8s deployment & security | ✅ Active |
 | 🚀 **Jules** | Meta-Agent | [📖 Jules Guide](JULES.md) | Agent creation & enhancement | ✅ Active |
 
 ### 📋 Agent Deep Dives
@@ -100,19 +100,19 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 - **Progress:** Tracks framework optimizations and prevents redundant modernization
 - **When to use:** Next.js upgrades, performance optimization, modern React patterns
 
-#### 🐳 [Docker](DOCKER.md) - Container Optimizer
-**Perfect for:** Dockerized applications, CI/CD pipelines, and container deployment
-- **Focus:** Dockerfile optimization, image size reduction, container security
-- **Logging:** Documents container improvements and security fixes
-- **Progress:** Tracks optimization wins (size reduction, build speed)
-- **When to use:** New service creation, slow builds, security audits
+#### 🐳 [Docker](DOCKER.md) - Container Specialist
+**Perfect for:** Containerized applications, microservices, and CI/CD pipelines
+- **Focus:** Image size reduction, security scanning, build optimization
+- **Logging:** Maintains `.jules/docker-progress.md` for container improvements
+- **Progress:** Tracks image size reduction and security fixes
+- **When to use:** Dockerfile updates, base image upgrades, security audits
 
-#### ☸️ [Kubernetes](KUBERNETES.md) - K8s Deployer
-**Perfect for:** Kubernetes clusters, Helm charts, and cloud-native applications
-- **Focus:** Manifest validation, resource limits, security context, scalability
-- **Logging:** Documents configuration changes and stability improvements
-- **Progress:** Tracks cluster health improvements and deployment fixes
-- **When to use:** Deployment updates, cluster upgrades, scaling configuration
+#### ☸️ [Kubernetes](KUBERNETES.md) - Orchestration Expert
+**Perfect for:** K8s clusters, Helm charts, and cloud-native deployments
+- **Focus:** Resource limits, security context, resilience, scalability
+- **Logging:** Maintains `.jules/kubernetes-progress.md` for cluster optimizations
+- **Progress:** Tracks configuration improvements and security hardening
+- **When to use:** Deployment updates, cluster audits, scaling configuration
 
 #### 🚀 [Jules](JULES.md) - Meta-Agent Architect
 **Perfect for:** Repository maintenance, agent enhancement, and autonomous agent creation
@@ -203,11 +203,11 @@ Each agent is designed for specific optimization tasks:
 # For Next.js projects
 😎 Shtef: Senior Next.js optimization
 
-# For container optimization
+# For Container optimization
 🐳 Docker: Optimize Dockerfiles and images
 
-# For Kubernetes deployments
-☸️ Kubernetes: Optimize K8s manifests and config
+# For Kubernetes deployment
+☸️ Kubernetes: Secure and scale K8s resources
 
 # For repository enhancement and agent creation
 🚀 Jules: Meta-agent for autonomous improvement
