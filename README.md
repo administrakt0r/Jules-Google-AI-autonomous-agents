@@ -6,14 +6,18 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Agents](https://img.shields.io/badge/Agents-20-blue.svg)](#-agent-overview)
 [![Jules.ai Compatible](https://img.shields.io/badge/Jules.ai-Compatible-purple.svg)](https://jules.ai)
-[![Free LLM API & AI Tools](https://img.shields.io/badge/Free_LLM_API_and_AI_Tools-LLM.kiwi-orange.svg)](https://llm.kiwi)
-[![Free WordPress Hosting](https://img.shields.io/badge/Free_WordPress_Hosting-WPinEU.com-green.svg)](https://wpineu.com)
+
+
 
 > **Continuous, autonomous optimization for modern codebases**
 > 
 > Deploy specialized AI agents that work 24/7 to optimize, secure, and enhance your codebase
 
 🚀 **Enhance your workflow with our free tools:** [WPinEU.com](https://wpineu.com) • [LLM.kiwi](https://llm.kiwi) • [AI Usage Audit](https://ai-usage.vercel.app)
+
+Check out these awesome **FREE** services: 
+[![Free LLM API & AI Tools](https://img.shields.io/badge/Free_LLM_API_and_AI_Tools-LLM.kiwi-green.svg)](https://llm.kiwi)
+[![Free WordPress Hosting](https://img.shields.io/badge/Free_WordPress_Hosting_with_cPanel-WPinEU.com-blue.svg)](https://wpineu.com)
 
 </div>
 
