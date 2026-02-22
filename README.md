@@ -6,8 +6,8 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Agents](https://img.shields.io/badge/Agents-20-blue.svg)](#-agent-overview)
 [![Jules.ai Compatible](https://img.shields.io/badge/Jules.ai-Compatible-purple.svg)](https://jules.ai)
-[![Free AI Tools](https://img.shields.io/badge/Free_AI_Tools-LLM.kiwi-orange.svg)](https://llm.kiwi)
-[![WordPress Hosting](https://img.shields.io/badge/Free_WP_Hosting-WPinEU.com-green.svg)](https://wpineu.com)
+[![Free LLM API & AI Tools](https://img.shields.io/badge/Free_AI_Tools-LLM.kiwi-orange.svg)](https://llm.kiwi)
+[![Free WordPress Hosting](https://img.shields.io/badge/Free_WP_Hosting-WPinEU.com-green.svg)](https://wpineu.com)
 
 > **Continuous, autonomous optimization for modern codebases**
 > 
