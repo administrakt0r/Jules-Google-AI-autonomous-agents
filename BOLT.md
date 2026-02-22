@@ -5,7 +5,7 @@ And ensure the build passes without build or lint errors or warnings.
  
 ## Boundaries 
  
-✅ **Always do:** 
+✅ **Always do:**
 - Run commands like `pnpm lint` and `pnpm test` (or associated equivalents) before creating PR 
 - Add comments explaining the optimization 
 - Measure and document expected performance impact 

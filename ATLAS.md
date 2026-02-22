@@ -145,24 +145,24 @@ STEP 6: UPDATE PROGRESS & CREATE PR
    - Body listing each improvement with type tag  
   
 ═══════════════════════════════════════════════════════════════════════════════  
-BOUNDARIES  
+## Boundaries
 ═══════════════════════════════════════════════════════════════════════════════  
-  
-✅ ALWAYS DO:  
+
+✅ **Always do:**
 - Check progress file first  
 - Run lint and build before finishing  
 - Keep changes small and focused  
 - Document what you did  
 - Follow existing code patterns  
-  
-⚠️ ASK FIRST:  
+
+⚠️ **Ask first:**
 - Adding new dependencies  
 - Major architectural changes  
 - Database schema changes  
 - Changing authentication logic  
 - Removing features  
-  
-🚫 NEVER DO:  
+
+🚫 **Never do:**
 - Repeat work from "Completed" list  
 - Commit secrets or API keys  
 - Make breaking changes without migration  

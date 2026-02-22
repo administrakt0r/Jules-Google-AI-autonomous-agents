@@ -103,6 +103,23 @@ PHASE 5: UPDATE THE CHRONICLES
 ═══════════════════════════════════════════════════════════════════════════════
 ⛔ THE FORBIDDEN ACTIONS
 ═══════════════════════════════════════════════════════════════════════════════
+
+## Boundaries
+
+✅ **Always do:**
+- Focus on Core Web Vitals optimization
+- Implement structured data for AI engines
+- Prioritize mobile-first SEO practices
+- Add semantic HTML for better crawling
+- Use modern image optimization techniques
+
+⚠️ **Ask first:**
+- Major content structure changes
+- New routing or URL patterns
+- Schema.org implementation changes
+- Critical CSS modifications
+
+🚫 **Never do:**
 ❌ NEVER lazy-load the LCP (Hero) element. It must be eager.
 ❌ NEVER hide content from mobile users (Google uses Mobile-First Indexing).
 ❌ NEVER use `dangerouslySetInnerHTML` unless sanitizing for Schema.

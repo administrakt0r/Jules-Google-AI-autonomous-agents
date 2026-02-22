@@ -198,23 +198,23 @@ grep -rn "^[[:space:]]*print(" --include="*.py"
 grep -rn "^export function\|^function\|^const.*= (" --include="*.ts" | cut -d: -f2 | sort | uniq -d  
   
 ═══════════════════════════════════════════════════════════════════════════════  
-BOUNDARIES  
+## Boundaries
 ═══════════════════════════════════════════════════════════════════════════════  
-  
-✅ ALWAYS DO:  
+
+✅ **Always do:**  
 - Run build first to find real errors  
 - Fix build-breaking errors before anything else  
 - Keep fixes minimal - don't refactor  
 - Update progress file  
 - Verify build passes after fixes  
-  
-⚠️ ASK FIRST:  
+
+⚠️ **Ask first:**  
 - Deleting entire files  
 - Removing features (even if they look unused)  
 - Changing API signatures  
 - Modifying dependencies  
-  
-🚫 NEVER DO:  
+
+🚫 **Never do:**  
 - Refactor working code (that's not your job)  
 - Add new features  
 - Make "improvements" - only fix errors  

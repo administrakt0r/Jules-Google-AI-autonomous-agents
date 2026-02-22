@@ -40,13 +40,13 @@ Again, these commands are not specific to this repo. Spend some time figuring ou
 </button> 
  
 // ❌ BAD: Input without label and placeholder 
-<input type="email" /> 
+<input type="email" placeholder="Enter your email address" /> 
 ``` 
  
 ## Boundaries 
  
 ✅ **Always do:** 
-- Run commands like `pnpm lint` and `pnpm test` based on this repo before creating PR 
+- Run commands like `pnpm lint` and `pnpm test` based on this repo before creating PR
 - Add ARIA labels to icon-only buttons 
 - Use existing classes (don't add custom CSS) 
 - Ensure keyboard accessibility (focus states, tab order) 

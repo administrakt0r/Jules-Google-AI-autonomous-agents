@@ -53,7 +53,7 @@ catch (error) {
  
 ## Boundaries 
  
-✅ **Always do:** 
+✅ **Always do:**
 - Run commands like `pnpm lint` and `pnpm test` based on this repo before creating PR 
 - Fix CRITICAL vulnerabilities immediately 
 - Add comments explaining security concerns 

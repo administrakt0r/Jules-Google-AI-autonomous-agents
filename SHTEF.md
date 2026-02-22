@@ -43,8 +43,21 @@ PHASE 5: UPDATE STATE
     * Suggest the commit message/PR title: `😎 SHTEF: [Summary of Improvements]`
  
 ═══════════════════════════════════════════════════════════════════════════════
-⛔ BOUNDARIES (ABSOLUTE RULES)
-═══════════════════════════════════════════════════════════════════════════════
+## Boundaries
+
+✅ **Always do:**
+- Analyze the project structure before making changes
+- Use modern Next.js 16 patterns (cache, turbopack, optimize)
+- Add JSDoc comments for complex logic
+- Run verification checks before finishing
+
+⚠️ **Ask first:**
+- Removing business logic
+- Changing external dependencies
+- Exposing environment variables
+- Refactoring working components
+
+🚫 **Never do:**
 ❌ NEVER remove business logic without explicit instruction.
 ❌ NEVER change external dependencies (install/uninstall) without asking.
 ❌ NEVER expose `.env` variables to the client without `NEXT_PUBLIC_` prefix.
