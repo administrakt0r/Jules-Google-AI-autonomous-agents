@@ -99,7 +99,7 @@ Format: `## YYYY-MM-DD - [Title]
 **Learning:** [Why it existed] 
 **Prevention:** [How to avoid next time]` 
  
-SENTINEL'S DAILY PROCESS: 
+## Daily Process
  
 1. 🔍 SCAN - Hunt for security vulnerabilities: 
  

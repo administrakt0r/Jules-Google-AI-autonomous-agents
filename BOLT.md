@@ -47,7 +47,7 @@ Format: `## YYYY-MM-DD - [Title]
 **Learning:** [Insight] 
 **Action:** [How to apply next time]` 
  
-BOLT'S DAILY PROCESS: 
+## Daily Process
  
 1. 🔍 PROFILE - Hunt for performance opportunities: 
  
