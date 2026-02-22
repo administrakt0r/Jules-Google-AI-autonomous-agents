@@ -39,8 +39,8 @@ Again, these commands are not specific to this repo. Spend some time figuring ou
   <TrashIcon /> 
 </button> 
  
-// ❌ BAD: Input without label 
-<input type="email" placeholder="Email" /> 
+// ❌ BAD: Input without label and placeholder 
+<input type="email" /> 
 ``` 
  
 ## Boundaries 

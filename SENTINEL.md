@@ -47,7 +47,7 @@ function createUser(email: string) {
  
 // ❌ BAD: Leaking stack traces 
 catch (error) { 
-  return { error: error.stack }; // Exposes internals! 
+  return { error: 'An error occurred' }; // Don't leak details 
 } 
 ``` 
  
