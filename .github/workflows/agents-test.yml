@@ -1,0 +1,313 @@
+name: 🤖 Agents Validation
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run tests weekly on Sundays at 2 AM UTC
+    - cron: '0 2 * * 0'
+
+jobs:
+  validate-agents:
+    name: Validate Agent Prompts
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        agent: [SENTINEL, BOLT, ATLAS, BUDDHA, HUNTER, PICASSO, SHTEF]
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: 🔍 Validate Agent Structure
+      run: |
+        echo "🤖 Validating ${{ matrix.agent }} agent..."
+        
+        # Check if agent file exists
+        if [ ! -f "${{ matrix.agent }}.md" ]; then
+          echo "❌ Agent file ${{ matrix.agent }}.md not found"
+          exit 1
+        fi
+        
+        echo "✅ Agent file exists"
+        
+        # Check required sections
+        required_sections=(
+          "You are"
+          "Your mission is to"
+          "## Boundaries"
+          "✅ **Always do:**"
+          "⚠️ **Ask first:**"
+          "🚫 **Never do:**"
+        )
+        
+        for section in "${required_sections[@]}"; do
+          if ! grep -q "$section" "${{ matrix.agent }}.md"; then
+            echo "❌ Missing required section: $section"
+            exit 1
+          fi
+          echo "✅ Found section: $section"
+        done
+        
+        # Check for emoji in agent name
+        if ! grep -q "🤖\|🛡️\|⚡\|🌐\|🧘\|🔍\|🎨\|😎" "${{ matrix.agent }}.md"; then
+          echo "⚠️ Warning: Agent should have an emoji"
+        else
+          echo "✅ Agent has emoji"
+        fi
+        
+        # Check file size (should be substantial but not too large)
+        file_size=$(wc -c < "${{ matrix.agent }}.md")
+        if [ $file_size -lt 1000 ]; then
+          echo "⚠️ Warning: Agent file seems too small ($file_size bytes)"
+        elif [ $file_size -gt 50000 ]; then
+          echo "⚠️ Warning: Agent file seems too large ($file_size bytes)"
+        else
+          echo "✅ Agent file size is reasonable ($file_size bytes)"
+        fi
+        
+        echo "🎉 ${{ matrix.agent }} agent validation completed!"
+
+  validate-documentation:
+    name: Validate Documentation
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: 📚 Check Documentation Files
+      run: |
+        echo "📚 Validating documentation..."
+        
+        # Check required documentation files
+        required_docs=(
+          "README.md"
+          "CONTRIBUTING.md"
+          "LICENSE"
+        )
+        
+        for doc in "${required_docs[@]}"; do
+          if [ ! -f "$doc" ]; then
+            echo "❌ Documentation file $doc not found"
+            exit 1
+          fi
+          echo "✅ Found documentation: $doc"
+        done
+        
+        # Check docs directory
+        if [ ! -d "docs" ]; then
+          echo "❌ docs directory not found"
+          exit 1
+        fi
+        
+        echo "✅ docs directory exists"
+        
+        # Check required docs files
+        required_docs_files=(
+          "docs/AGENT_ARCHITECTURE.md"
+          "docs/INTEGRATION_GUIDE.md"
+          "docs/BEST_PRACTICES.md"
+          "docs/FAQ.md"
+        )
+        
+        for doc in "${required_docs_files[@]}"; do
+          if [ ! -f "$doc" ]; then
+            echo "❌ Documentation file $doc not found"
+            exit 1
+          fi
+          echo "✅ Found documentation: $doc"
+        done
+        
+        echo "🎉 Documentation validation completed!"
+
+  check-links:
+    name: Check Links
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: 🔗 Check Markdown Links
+      uses: gaurav-nelson/github-action-markdown-link-check@v1
+      with:
+        use-quiet-mode: 'yes'
+        use-verbose-mode: 'yes'
+        config-file: '.github/link-check-config.json'
+      continue-on-error: true
+
+  validate-templates:
+    name: Validate GitHub Templates
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: 📋 Validate Issue Templates
+      run: |
+        echo "📋 Validating issue templates..."
+        
+        # Check issue template directory
+        if [ ! -d ".github/ISSUE_TEMPLATE" ]; then
+          echo "❌ Issue template directory not found"
+          exit 1
+        fi
+        
+        echo "✅ Issue template directory exists"
+        
+        # Check required templates
+        required_templates=(
+          ".github/ISSUE_TEMPLATE/bug_report.md"
+          ".github/ISSUE_TEMPLATE/feature_request.md"
+        )
+        
+        for template in "${required_templates[@]}"; do
+          if [ ! -f "$template" ]; then
+            echo "❌ Template $template not found"
+            exit 1
+          fi
+          echo "✅ Found template: $template"
+        done
+        
+        # Check PR template
+        if [ ! -f ".github/PULL_REQUEST_TEMPLATE.md" ]; then
+          echo "❌ PR template not found"
+          exit 1
+        fi
+        
+        echo "✅ PR template exists"
+        
+        # Validate template frontmatter
+        for template in "${required_templates[@]}"; do
+          if ! grep -q "^name:" "$template"; then
+            echo "❌ Template $template missing name field"
+            exit 1
+          fi
+          echo "✅ Template $template has name field"
+        done
+        
+        echo "🎉 Template validation completed!"
+
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: 🔒 Run Security Scan
+      uses: securecodewarrior/github-action-add-sarif@v1
+      continue-on-error: true
+      with:
+        sarif-file: 'security-scan-results.sarif'
+
+  performance-check:
+    name: Performance Check
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: ⚡ Check Repository Performance
+      run: |
+        echo "⚡ Checking repository performance..."
+        
+        # Check repository size
+        repo_size=$(du -sh . | cut -f1)
+        echo "📊 Repository size: $repo_size"
+        
+        # Count files
+        file_count=$(find . -type f | wc -l)
+        echo "📊 Total files: $file_count"
+        
+        # Count agent files
+        agent_count=$(ls -1 *.md 2>/dev/null | grep -E '^[A-Z]+\.md$' | wc -l)
+        echo "🤖 Agent files: $agent_count"
+        
+        # Check for very large files
+        large_files=$(find . -type f -size +1M -not -path './.git/*')
+        if [ ! -z "$large_files" ]; then
+          echo "⚠️ Warning: Large files found:"
+          echo "$large_files"
+        else
+          echo "✅ No large files found"
+        fi
+        
+        echo "🎉 Performance check completed!"
+
+  community-health:
+    name: Community Health Check
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: 🌟 Check Community Features
+      run: |
+        echo "🌟 Checking community features..."
+        
+        # Check for contributing guidelines
+        if [ ! -f "CONTRIBUTING.md" ]; then
+          echo "❌ CONTRIBUTING.md not found"
+          exit 1
+        fi
+        echo "✅ Contributing guidelines exist"
+        
+        # Check for license
+        if [ ! -f "LICENSE" ]; then
+          echo "❌ LICENSE not found"
+          exit 1
+        fi
+        echo "✅ License exists"
+        
+        # Check for code of conduct (optional but recommended)
+        if [ -f "CODE_OF_CONDUCT.md" ]; then
+          echo "✅ Code of conduct exists"
+        else
+          echo "ℹ️ Consider adding CODE_OF_CONDUCT.md"
+        fi
+        
+        # Check for support documentation
+        if [ -f "SUPPORT.md" ] || grep -q "support" README.md; then
+          echo "✅ Support information available"
+        else
+          echo "ℹ️ Consider adding support information"
+        fi
+        
+        echo "🎉 Community health check completed!"
+
+  build-summary:
+    name: Build Summary
+    runs-on: ubuntu-latest
+    needs: [validate-agents, validate-documentation, check-links, validate-templates, security-scan, performance-check, community-health]
+    if: always()
+    
+    steps:
+    - name: 📊 Build Summary
+      run: |
+        echo "🎯 Autonomous Agents Repository Validation Summary"
+        echo "=================================================="
+        echo ""
+        echo "🤖 Agent Validation: ${{ needs.validate-agents.result }}"
+        echo "📚 Documentation: ${{ needs.validate-documentation.result }}"
+        echo "🔗 Link Check: ${{ needs.check-links.result }}"
+        echo "📋 Templates: ${{ needs.validate-templates.result }}"
+        echo "🔒 Security Scan: ${{ needs.security-scan.result }}"
+        echo "⚡ Performance: ${{ needs.performance-check.result }}"
+        echo "🌟 Community Health: ${{ needs.community-health.result }}"
+        echo ""
+        
+        # Overall status
+        if [[ "${{ needs.validate-agents.result }}" == "success" && "${{ needs.validate-documentation.result }}" == "success" && "${{ needs.validate-templates.result }}" == "success" && "${{ needs.community-health.result }}" == "success" ]]; then
+          echo "🎉 All critical checks passed! Repository is ready for public release."
+        else
+          echo "⚠️ Some checks failed. Please review and fix issues."
+        fi
