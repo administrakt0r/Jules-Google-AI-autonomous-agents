@@ -16,7 +16,7 @@ jobs:
     
     strategy:
       matrix:
-        agent: [SENTINEL, BOLT, ATLAS, BUDDHA, HUNTER, PICASSO, SHTEF]
+        agent: [SENTINEL, BOLT, ATLAS, BUDDHA, HUNTER, PICASSO, SHTEF, DOCKER, KUBERNETES]
     
     steps:
     - name: 📥 Checkout Repository
@@ -53,7 +53,7 @@ jobs:
         done
         
         # Check for emoji in agent name
-        if ! grep -q "🤖\|🛡️\|⚡\|🌐\|🧘\|🔍\|🎨\|😎" "${{ matrix.agent }}.md"; then
+        if ! grep -q "🤖\|🛡️\|⚡\|🌐\|🧘\|🔍\|🎨\|😎\|🐳\|☸️" "${{ matrix.agent }}.md"; then
           echo "⚠️ Warning: Agent should have an emoji"
         else
           echo "✅ Agent has emoji"
