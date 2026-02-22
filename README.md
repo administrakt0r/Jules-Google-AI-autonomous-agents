@@ -45,6 +45,7 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 | 🔍 **Hunter** | Debugging | [📖 Hunter Guide](HUNTER.md) | Bug hunting & code cleanup | ✅ Active |
 | 🎨 **Picasso** | UX/UI | [📖 Picasso Guide](PICASSO.md) | User experience & accessibility | ✅ Active |
 | 😎 **Shtef** | Next.js | [📖 Shtef Guide](SHTEF.md) | Senior Next.js optimization | ✅ Active |
+| 🚀 **Jules** | Meta-Agent | [📖 Jules Guide](JULES.md) | Agent creation & enhancement | ✅ Active |
 
 ### 📋 Agent Deep Dives
 
@@ -97,6 +98,13 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 - **Progress:** Tracks framework optimizations and prevents redundant modernization
 - **When to use:** Next.js upgrades, performance optimization, modern React patterns
 
+#### 🚀 [Jules](JULES.md) - Meta-Agent Architect
+**Perfect for:** Repository maintenance, agent enhancement, and autonomous agent creation
+- **Focus:** Agent optimization, new agent creation, repository improvement
+- **Logging:** Maintains `.jules/jules-progress.md` and creates daily update files
+- **Progress:** Tracks repository enhancements and agent evolution
+- **When to use:** Continuous repository improvement, agent expansion, quality assurance
+
 ## 📚 Logging & Progress Tracking
 
 All agents use intelligent logging systems to prevent repetitive work and ensure continuous progress:
@@ -111,7 +119,13 @@ All agents use intelligent logging systems to prevent repetitive work and ensure
 ├── buddha-scroll.md          # SEO/GEO optimization progress
 ├── hunter-progress.md       # Bug fixes and cleanup tracking
 ├── picasso.md               # UX/accessibility learnings
-└── shtef-progress.md        # Next.js modernization tracking
+├── shtef-progress.md        # Next.js modernization tracking
+├── jules-progress.md        # Meta-agent enhancements and repository improvements
+└── auto-generated-ai-agents-by-jules/  # Jules-generated content
+    ├── daily-updates/        # Daily improvements by Jules
+    ├── weekly-reports/       # Repository health reports
+    ├── new-agents/          # New agents created by Jules
+    └── enhanced-agents/      # Improved versions of existing agents
 ```
 
 ### 📊 Progress Tracking Features
@@ -172,6 +186,9 @@ Each agent is designed for specific optimization tasks:
 
 # For Next.js projects
 😎 Shtef: Senior Next.js optimization
+
+# For repository enhancement and agent creation
+🚀 Jules: Meta-agent for autonomous improvement
 ```
 
 ### 2. Integration with Jules.ai
@@ -200,7 +217,31 @@ agents:
   - name: "picasso-ux"
     schedule: "bi-weekly" 
     prompt_file: "PICASSO.md"
+    
+  - name: "jules-meta"
+    schedule: "daily"
+    prompt_file: "JULES.md"
 ```
+
+### 4. Using the Meta-Agent (Jules)
+
+**For Repository Maintenance:**
+- Deploy Jules to continuously improve the agent collection
+- Jules will enhance existing agents and create new ones
+- All improvements are logged in `auto-generated-ai-agents-by-jules/`
+- Jules maintains quality standards and validates all changes
+
+**For Agent Enhancement:**
+- Jules analyzes agent effectiveness and identifies improvements
+- Creates enhanced versions (v2.0+) with expanded capabilities
+- Maintains backward compatibility while adding new features
+- Documents all changes and improvements
+
+**For New Agent Creation:**
+- Jules identifies gaps in agent coverage
+- Creates specialized agents for emerging technologies
+- Follows established patterns and quality standards
+- Tests and validates all new agents before deployment
 
 ---
 
@@ -215,6 +256,7 @@ agents:
 - 🔍 **Hunter**: 10+ bugs fixed and cleaned
 - 🎨 **Picasso**: 5-8 UX enhancements
 - 😎 **Shtef**: Next.js modernization
+- 🚀 **Jules**: Continuous agent enhancement and new agent creation
 
 ### Success Metrics
 
@@ -299,6 +341,39 @@ YOUR MISSION: [specific goal and scope]
 2. [Step 2] 
 3. [Step 3]
 ```
+
+---
+
+## 🌟 Auto-Generated Agents by Jules
+
+This repository features a unique **meta-agent system** where **Jules** 🚀 autonomously enhances and expands the agent collection:
+
+### 📁 What Jules Creates
+- **Enhanced Agents** - Improved versions of existing agents (v2.0+)
+- **New Agents** - Specialized agents for emerging technologies
+- **Daily Updates** - Continuous improvements and optimizations
+- **Quality Reports** - Repository health and performance metrics
+
+### 📂 Generated Content Structure
+```
+auto-generated-ai-agents-by-jules/
+├── daily-updates/        # Daily improvements by Jules
+├── weekly-reports/       # Repository health reports  
+├── new-agents/          # New agents created by Jules
+└── enhanced-agents/      # Improved versions of existing agents
+```
+
+### 🚀 Jules Capabilities
+- **Agent Analysis** - Reviews effectiveness and identifies improvements
+- **New Agent Creation** - Designs agents for emerging technologies
+- **Quality Assurance** - Validates all changes against standards
+- **Documentation Updates** - Maintains README and integration guides
+- **Progress Tracking** - Logs all improvements and changes
+
+### 📈 Recent Jules Activity
+*Check the `auto-generated-ai-agents-by-jules/` directory for the latest autonomous improvements*
+
+**Learn more:** [📖 Auto-Generated Agents Guide](auto-generated-ai-agents-by-jules/README.md)
 
 ---
 
