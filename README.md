@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Agents](https://img.shields.io/badge/Agents-20-blue.svg)](#-agent-overview)
+[![Agents](https://img.shields.io/badge/Agents-21-blue.svg)](#-agent-overview)
 [![Jules.ai Compatible](https://img.shields.io/badge/Jules.ai-Compatible-purple.svg)](https://jules.ai)
 
 
@@ -61,6 +61,7 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 | 🤖 **AIML** | AI/ML | [📖 AIML Guide](AIML.md) | Model optimization & training | ✅ Active |
 | 🔌 **IoT** | Edge/IoT | [📖 IoT Guide](IOT.md) | Device connectivity & edge logic | ✅ Active |
 | ⚛️ **Quantum**| Future Tech | [📖 Quantum Guide](QUANTUM.md) | Quantum readiness & algorithms | ✅ Active |
+| 📚 **Docs** | Documentation | [📖 Docs Guide](DOCS.md) | Documentation maintenance | ✅ Active |
 | 🚀 **Jules** | Meta-Agent | [📖 Jules Guide](JULES.md) | Agent creation & enhancement | ✅ Active |
 
 ### 📋 Agent Deep Dives
@@ -190,6 +191,13 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 - **Focus:** Quantum circuit optimization, algorithm readiness, simulation
 - **When to use:** Quantum algorithm development, circuit simulation
 
+#### 📚 [Docs](DOCS.md) - Documentation Custodian
+**Perfect for:** Keeping documentation in sync with code, fixing links, and improving readability
+- **Focus:** Accuracy, completeness, readability, broken link fixing
+- **Logging:** Maintains `.jules/docs-progress.md` for documentation improvements
+- **Progress:** Tracks documentation coverage and fixes
+- **When to use:** After major feature releases, when onboarding new developers
+
 #### 🚀 [Jules](JULES.md) - Meta-Agent Architect
 **Perfect for:** Repository maintenance, agent enhancement, and autonomous agent creation
 - **Focus:** Agent optimization, new agent creation, repository improvement
@@ -212,6 +220,7 @@ All agents use intelligent logging systems to prevent repetitive work and ensure
 ├── hunter-progress.md       # Bug fixes and cleanup tracking
 ├── picasso.md               # UX/accessibility learnings
 ├── shtef-progress.md        # Next.js modernization tracking
+├── docs-progress.md         # Documentation maintenance tracking
 ├── jules-progress.md        # Meta-agent enhancements and repository improvements
 └── auto-generated-ai-agents-by-jules/  # Jules-generated content
     ├── daily-updates/        # Daily improvements by Jules
@@ -314,6 +323,9 @@ Each agent is designed for specific optimization tasks:
 
 # For Quantum readiness
 ⚛️ Quantum: Prepare for quantum advantage
+
+# For documentation maintenance
+📚 Docs: Audit and improve documentation
 
 # For repository enhancement and agent creation
 🚀 Jules: Meta-agent for autonomous improvement
