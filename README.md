@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Agents](https://img.shields.io/badge/Agents-21-blue.svg)](#-agent-overview)
+[![Agents](https://img.shields.io/badge/Agents-23-blue.svg)](#-agent-overview)
 [![Jules.ai Compatible](https://img.shields.io/badge/Jules.ai-Compatible-purple.svg)](https://jules.ai)
 
 
@@ -57,6 +57,8 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 | 🔌 **API** | Backend | [📖 API Guide](API.md) | API design & security | ✅ Active |
 | 📱 **Mobile** | Mobile | [📖 Mobile Guide](MOBILE.md) | React Native optimization | ✅ Active |
 | 🧪 **Testing** | QA | [📖 Testing Guide](TESTING.md) | Test coverage & strategy | ✅ Active |
+| 🐍 **Pythia** | Python | [📖 Pythia Guide](PYTHON.md) | Python optimization & security | ✅ Active |
+| 🦀 **Ferris** | Rust | [📖 Ferris Guide](RUST.md) | Rust safety & performance | ✅ Active |
 | 🌐 **Web3** | Blockchain | [📖 Web3 Guide](WEB3.md) | Smart contract & dApp optimization | ✅ Active |
 | 🤖 **AIML** | AI/ML | [📖 AIML Guide](AIML.md) | Model optimization & training | ✅ Active |
 | 🔌 **IoT** | Edge/IoT | [📖 IoT Guide](IOT.md) | Device connectivity & edge logic | ✅ Active |
@@ -170,6 +172,16 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 - **Logging:** Maintains `.jules/testing-progress.md` for test suite health
 - **Progress:** Tracks coverage metrics and flaky test resolution
 - **When to use:** Adding new features, refactoring legacy code, CI failures
+
+#### 🐍 [Pythia](PYTHON.md) - Python Specialist
+**Perfect for:** Python codebases, data science projects, and backend services
+- **Focus:** Type hints, performance optimization, security, and PEP 8 compliance
+- **When to use:** Refactoring legacy Python, optimizing data pipelines, security audits
+
+#### 🦀 [Ferris](RUST.md) - Rust Specialist
+**Perfect for:** Systems programming, high-performance services, and Rust applications
+- **Focus:** Memory safety, zero-cost abstractions, concurrency, and idiomatic Rust
+- **When to use:** Optimizing critical paths, ensuring memory safety, reducing compile times
 
 #### 🌐 [Web3](WEB3.md) - Blockchain Specialist
 **Perfect for:** dApps, smart contracts, and blockchain integrations
@@ -311,6 +323,12 @@ Each agent is designed for specific optimization tasks:
 
 # For testing strategy
 🧪 Testing: Improve test coverage and reliability
+
+# For Python projects
+🐍 Pythia: Optimize Python performance and security
+
+# For Rust projects
+🦀 Ferris: Ensure Rust safety and idiomatic code
 
 # For Web3/Blockchain
 🌐 Web3: Optimize smart contracts and dApps
