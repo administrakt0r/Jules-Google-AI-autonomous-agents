@@ -10,6 +10,7 @@
 - [2026-01-13] Standardized SENTINEL, BOLT, BUDDHA, and PICASSO to match the new agent template
 
 ## New Agents Created
+- [2026-02-27] PYTHON - Python optimization agent
 - [2026-01-14] DOCS - Documentation maintenance agent
 - [2026-01-13] DOCKER - Container optimization agent
 - [2026-01-13] KUBERNETES - K8s deployment agent
@@ -25,6 +26,10 @@
 - [2026-01-13] QUANTUM - Quantum computing preparation agent
 
 ## Repository Updates
+- [2026-02-27] Added `validate_agents.sh` for local validation
+- [2026-02-27] Updated README.md with PYTHON agent
+- [2026-02-27] Updated GitHub workflow for PYTHON validation
+- [2026-02-27] Removed "Agent Philosophy" from CONTRIBUTING.md template
 - [2026-01-14] Updated README.md with DOCS agent
 - [2026-01-14] Updated GitHub workflow for DOCS validation
 - [2026-01-13] Updated README with new agent count and deep dives

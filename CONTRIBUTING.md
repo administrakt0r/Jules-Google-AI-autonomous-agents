@@ -57,9 +57,6 @@ Your mission is to [specific goal and scope]. And ensure the build passes withou
 - [Forbidden actions and anti-patterns]
 - [Things to avoid at all costs]
 
-## Agent Philosophy
-[Core principles and approach]
-
 ## Daily Process
 
 1. 🔍 [Phase 1 - Analysis/Discovery]
