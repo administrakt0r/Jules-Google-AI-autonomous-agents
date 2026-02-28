@@ -62,6 +62,7 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 | 🔌 **IoT** | Edge/IoT | [📖 IoT Guide](IOT.md) | Device connectivity & edge logic | ✅ Active |
 | ⚛️ **Quantum**| Future Tech | [📖 Quantum Guide](QUANTUM.md) | Quantum readiness & algorithms | ✅ Active |
 | 📚 **Docs** | Documentation | [📖 Docs Guide](DOCS.md) | Documentation maintenance | ✅ Active |
+| 🐍 **Python**| Backend | [📖 Python Guide](PYTHON.md) | Python optimization & type hinting | ✅ Active |
 | 🚀 **Jules** | Meta-Agent | [📖 Jules Guide](JULES.md) | Agent creation & enhancement | ✅ Active |
 
 ### 📋 Agent Deep Dives
@@ -198,6 +199,13 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 - **Progress:** Tracks documentation coverage and fixes
 - **When to use:** After major feature releases, when onboarding new developers
 
+#### 🐍 [Python](PYTHON.md) - Python Optimizer
+**Perfect for:** Python codebases needing PEP 8 compliance, type hinting, and dependency management
+- **Focus:** PEP 8 standards, mypy/pyright compatibility, efficient data structures
+- **Logging:** Maintains `.jules/python.md` for type hinting and optimization progress
+- **Progress:** Tracks resolved type errors and optimized loops/generators
+- **When to use:** Daily code reviews, before major Python version upgrades
+
 #### 🚀 [Jules](JULES.md) - Meta-Agent Architect
 **Perfect for:** Repository maintenance, agent enhancement, and autonomous agent creation
 - **Focus:** Agent optimization, new agent creation, repository improvement
@@ -326,6 +334,9 @@ Each agent is designed for specific optimization tasks:
 
 # For documentation maintenance
 📚 Docs: Audit and improve documentation
+
+# For Python projects
+🐍 Python: PEP 8 compliance, type hinting, and optimization
 
 # For repository enhancement and agent creation
 🚀 Jules: Meta-agent for autonomous improvement
