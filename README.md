@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Agents](https://img.shields.io/badge/Agents-21-blue.svg)](#-agent-overview)
+[![Agents](https://img.shields.io/badge/Agents-22-blue.svg)](#-agent-overview)
 [![Jules.ai Compatible](https://img.shields.io/badge/Jules.ai-Compatible-purple.svg)](https://jules.ai)
 
 
@@ -62,6 +62,7 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 | 🔌 **IoT** | Edge/IoT | [📖 IoT Guide](IOT.md) | Device connectivity & edge logic | ✅ Active |
 | ⚛️ **Quantum**| Future Tech | [📖 Quantum Guide](QUANTUM.md) | Quantum readiness & algorithms | ✅ Active |
 | 📚 **Docs** | Documentation | [📖 Docs Guide](DOCS.md) | Documentation maintenance | ✅ Active |
+| 🐍 **Python**| Python | [📖 Python Guide](PYTHON.md) | Python optimization & typing | ✅ Active |
 | 🚀 **Jules** | Meta-Agent | [📖 Jules Guide](JULES.md) | Agent creation & enhancement | ✅ Active |
 
 ### 📋 Agent Deep Dives
@@ -198,6 +199,13 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 - **Progress:** Tracks documentation coverage and fixes
 - **When to use:** After major feature releases, when onboarding new developers
 
+#### 🐍 [Python](PYTHON.md) - Python Specialist
+**Perfect for:** Python applications, data science scripts, and backend services
+- **Focus:** PEP 8 compliance, type hinting, dependency management
+- **Logging:** Maintains `.jules/python.md` journal for Python best practices
+- **Progress:** Tracks type coverage and dependency updates
+- **When to use:** Code reviews, upgrading dependencies, refactoring
+
 #### 🚀 [Jules](JULES.md) - Meta-Agent Architect
 **Perfect for:** Repository maintenance, agent enhancement, and autonomous agent creation
 - **Focus:** Agent optimization, new agent creation, repository improvement
@@ -326,6 +334,9 @@ Each agent is designed for specific optimization tasks:
 
 # For documentation maintenance
 📚 Docs: Audit and improve documentation
+
+# For Python applications
+🐍 Python: Python optimization and typing
 
 # For repository enhancement and agent creation
 🚀 Jules: Meta-agent for autonomous improvement
