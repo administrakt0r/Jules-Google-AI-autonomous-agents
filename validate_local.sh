@@ -26,7 +26,7 @@ for agent in "${agents[@]}"; do
     fi
   done
 
-  if ! grep -q "Your mission is to.*And ensure the build passes without build or lint errors or warnings" "${agent}.md"; then
+  if ! grep -q "Your mission is to" "${agent}.md" || ! grep -q "And ensure the build passes without build or lint errors or warnings" "${agent}.md"; then
     echo "❌ Missing build assurance in ${agent}.md"
   fi
 
