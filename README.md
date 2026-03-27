@@ -51,6 +51,7 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 | 😎 **Shtef** | Next.js | [📖 Shtef Guide](SHTEF.md) | Senior Next.js optimization | ✅ Active |
 | 🐳 **Docker** | DevOps | [📖 Docker Guide](DOCKER.md) | Container optimization | ✅ Active |
 | ☸️ **Kubernetes**| DevOps | [📖 Kubernetes Guide](KUBERNETES.md) | K8s deployment & security | ✅ Active |
+| 🏗️ **Terraform** | DevOps | [📖 Terraform Guide](TERRAFORM.md) | Infrastructure as Code | ✅ Active |
 | 🗄️ **Database** | Database | [📖 Database Guide](DATABASE.md) | Query optimization & schema | ✅ Active |
 | 🔄 **CI/CD** | DevOps | [📖 CI/CD Guide](CICD.md) | Pipeline optimization | ✅ Active |
 | 📊 **Monitoring** | Observability | [📖 Monitoring Guide](MONITORING.md) | Logging & alerting | ✅ Active |
@@ -129,6 +130,13 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 - **Logging:** Maintains `.jules/kubernetes-progress.md` for cluster optimizations
 - **Progress:** Tracks configuration improvements and security hardening
 - **When to use:** Deployment updates, cluster audits, scaling configuration
+
+#### 🏗️ [Terraform](TERRAFORM.md) - IaC Specialist
+**Perfect for:** Infrastructure as Code, cloud resource management, and state consistency
+- **Focus:** Modular infrastructure, security, state management
+- **Logging:** Maintains `.jules/terraform-progress.md` for IaC improvements
+- **Progress:** Tracks drift detection and module updates
+- **When to use:** Infrastructure changes, drift detection, module refactoring
 
 #### 🗄️ [Database](DATABASE.md) - Data Architect
 **Perfect for:** Applications with complex queries, slow database performance, or schema scaling needs
@@ -301,6 +309,9 @@ Each agent is designed for specific optimization tasks:
 
 # For Kubernetes deployment
 ☸️ Kubernetes: Secure and scale K8s resources
+
+# For Infrastructure as Code
+🏗️ Terraform: Optimize IaC configurations
 
 # For database optimization
 🗄️ Database: Optimize queries and schema
