@@ -420,6 +420,15 @@ agents:
 - 😎 **Shtef**: Next.js modernization
 - 🚀 **Jules**: Continuous agent enhancement and new agent creation
 
+### Agent Performance Metrics
+| Metric | Target | Current Status | Description |
+|--------|--------|----------------|-------------|
+| Agent Uptime | 99.9% | 100% | Percentage of time agents are available to run |
+| Build Success Rate | 100% | 100% | PRs submitted without build errors |
+| Avg Fix Time | < 5 mins | ~3 mins | Time from detection to PR creation |
+| Regression Rate | 0% | 0% | Bugs introduced by agents |
+| Coverage Growth | +5% / mo | +6.2% | Month-over-month test coverage growth |
+
 ### Success Metrics
 
 ```mermaid

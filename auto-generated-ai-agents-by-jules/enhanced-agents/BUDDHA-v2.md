@@ -104,11 +104,11 @@ export async function generateMetadata({ params }) {
     __html: JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'TechArticle',
+      // Ensure `title` is sanitized/server-controlled before use here
       headline: title,
     })
   }}
 />
-```
 
 ### Knowledge Graph Optimization
 ```tsx
