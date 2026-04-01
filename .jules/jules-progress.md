@@ -27,6 +27,7 @@
 - [2026-01-13] QUANTUM - Quantum computing preparation agent
 
 ## Repository Updates
+- [2026-03-06] Added TERRAFORM agent to validation workflows and README agent count
 - [2026-03-06] Added Agent Performance Metrics to README.md
 - [2026-03-06] Fixed JULES agent formatting and added to workflow
 - [2026-01-14] Updated README.md and workflow with PYTHON agent
