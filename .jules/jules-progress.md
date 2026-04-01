@@ -39,6 +39,7 @@
 - [2026-01-13] Updated README.md with 4 new emerging technology agents
 
 ## Quality Improvements
+- [2026-03-31] Fixed JULES agent formatting to adhere to standard template
 - [2026-01-13] Standardized agent formatting across all files (5-phase process)
 - [2026-01-13] Added missing examples to SHTEF, ATLAS, HUNTER
 - [2026-01-13] Implemented local validation script `validate_agents.sh`
