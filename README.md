@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Agents](https://img.shields.io/badge/Agents-25-blue.svg)](#-agent-overview)
+[![Agents](https://img.shields.io/badge/Agents-24-blue.svg)](#-agent-overview)
 [![Jules.ai Compatible](https://img.shields.io/badge/Jules.ai-Compatible-purple.svg)](https://jules.ai)
 
 
@@ -64,6 +64,7 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 | ⚛️ **Quantum**| Future Tech | [📖 Quantum Guide](QUANTUM.md) | Quantum readiness & algorithms | ✅ Active |
 | 📚 **Docs** | Documentation | [📖 Docs Guide](DOCS.md) | Documentation maintenance | ✅ Active |
 | 🐍 **Python** | Python | [📖 Python Guide](PYTHON.md) | Python optimization & dependency mgmt | ✅ Active |
+| 🦀 **Rust** | Rust | [📖 Rust Guide](RUST.md) | Rust optimization & memory safety | ✅ Active |
 | 🚀 **Jules** | Meta-Agent | [📖 Jules Guide](JULES.md) | Agent creation & enhancement | ✅ Active |
 
 ### 📋 Agent Deep Dives
@@ -214,6 +215,13 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 - **Progress:** Tracks strict type coverage and style consistency
 - **When to use:** Adding new python scripts, optimizing data workflows, Python version upgrades
 
+#### 🦀 [Rust](RUST.md) - Rust Optimizer
+**Perfect for:** Systems programming, performance-critical backends, and WebAssembly
+- **Focus:** Memory safety, zero-cost abstractions, idiomatic code, avoiding unsafe
+- **Logging:** Maintains `.jules/rust-progress.md` for refactoring and optimizations
+- **Progress:** Tracks clippy warnings resolution and unsafe code reduction
+- **When to use:** Adding new Rust modules, optimizing bottlenecks, dependency audits
+
 #### 🚀 [Jules](JULES.md) - Meta-Agent Architect
 **Perfect for:** Repository maintenance, agent enhancement, and autonomous agent creation
 - **Focus:** Agent optimization, new agent creation, repository improvement
@@ -348,6 +356,9 @@ Each agent is designed for specific optimization tasks:
 
 # For Python projects
 🐍 Python: Optimize and enforce type safety
+
+# For Rust projects
+🦀 Rust: Optimize performance and memory safety
 
 # For repository enhancement and agent creation
 🚀 Jules: Meta-agent for autonomous improvement
