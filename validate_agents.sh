@@ -1,10 +1,10 @@
 #!/bin/bash
 # validate_agents.sh - Local validation script for AI Agents
 
-AGENTS=("SENTINEL" "BOLT" "ATLAS" "BUDDHA" "HUNTER" "PICASSO" "SHTEF" "DOCKER" "KUBERNETES" "TERRAFORM" "DATABASE" "CICD" "MONITORING" "API" "MOBILE" "TESTING" "WEB3" "AIML" "IOT" "QUANTUM" "DOCS")
+AGENTS=("SENTINEL" "BOLT" "ATLAS" "BUDDHA" "HUNTER" "PICASSO" "SHTEF" "DOCKER" "KUBERNETES" "TERRAFORM" "DATABASE" "CICD" "MONITORING" "API" "MOBILE" "TESTING" "WEB3" "AIML" "IOT" "QUANTUM" "DOCS" "PYTHON" "JULES" "RUST")
 
 REQUIRED_SECTIONS=("You are" "Your mission is to" "## Boundaries" "✅ **Always do:**" "⚠️ **Ask first:**" "🚫 **Never do:**")
-EMOJI_PATTERN="🤖|🛡️|⚡|🌐|🧘|🔍|🎨|😎|🐳|☸️|🏗️|🗄️|🔄|📊|🔌|📱|🧪|⚛️|📚"
+EMOJI_PATTERN="🤖|🛡️|⚡|🌐|🧘|🔍|🎨|😎|🐳|☸️|🏗️|🗄️|🔄|📊|🔌|📱|🧪|⚛️|📚|🐍|🚀|🦀"
 
 echo "🚀 Starting Agent Validation..."
 FAILED=0
