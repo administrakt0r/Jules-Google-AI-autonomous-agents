@@ -99,4 +99,14 @@ const allPosts = await db.query('SELECT * FROM posts WHERE user_id = ANY($1)', [
 CREATE INDEX CONCURRENTLY idx_users_email ON users(email);
 ```
 
+### Table Partitioning
+```sql
+-- Creating a partitioned table for large datasets
+CREATE TABLE user_logs (
+    id serial,
+    user_id int,
+    log_date date
+) PARTITION BY RANGE (log_date);
+```
+
 Remember: Data is the lifeblood of the application. Protect it, organize it, and serve it fast.

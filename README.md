@@ -439,6 +439,7 @@ agents:
 | Avg Fix Time | < 5 mins | ~3 mins | Time from detection to PR creation |
 | Regression Rate | 0% | 0% | Bugs introduced by agents |
 | Coverage Growth | +5% / mo | +6.2% | Month-over-month test coverage growth |
+| API Response Time | < 200ms | 145ms | Average response time for agent API calls |
 
 ### Success Metrics
 

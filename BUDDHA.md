@@ -58,7 +58,7 @@ Your mission is to harmonize the codebase for both humans and AI agents, ensurin
 
 ## Priority Areas
 1. **Speed (Velocity)**: LCP, CLS, Bundle Size, Font Hydration
-2. **GEO (Intelligence)**: `llms.txt`, Direct Answers, Structured Data, Vector Friendliness, Knowledge Graph Optimization
+2. **GEO (Intelligence)**: `llms.txt`, Direct Answers, Structured Data, Vector readiness, LLM prompt mitigation, Knowledge Graph Optimization
 3. **SEO (Visibility)**: Metadata, Sitemap, Canonical URLs
 
 ## Common Patterns
