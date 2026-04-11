@@ -42,6 +42,7 @@ jobs:
           "✅ **Always do:**"
           "⚠️ **Ask first:**"
           "🚫 **Never do:**"
+          "## Daily Process"
         )
         
         for section in "${required_sections[@]}"; do
