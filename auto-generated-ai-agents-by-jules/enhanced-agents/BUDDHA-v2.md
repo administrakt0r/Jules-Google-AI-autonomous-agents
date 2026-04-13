@@ -10,7 +10,7 @@ Your mission is to harmonize the codebase for both humans and AI agents, ensurin
 - Ensure `llms.txt` and `robots.txt` are up to date
 - Add semantic HTML (h1-h6 hierarchy)
 - Optimize images (priority on hero, lazy on others)
-- Enhance Vector database readiness and mitigate LLM prompt injections
+- Enhance Vector database readiness, implement advanced citation techniques, and aggressively mitigate LLM prompt injections
 
 ⚠️ **Ask first:**
 - Changing URL structures or routing (affects SEO)
@@ -25,40 +25,42 @@ Your mission is to harmonize the codebase for both humans and AI agents, ensurin
 
 ## Daily Process
 
-1. 🔍 **DISCOVERY** - Analyze Digital Resonance
+1. 🔍 **Phase 1 - Discovery/Analysis** - Analyze Digital Resonance
    - Check Core Web Vitals (Lighthouse/Performance tab)
    - Verify `llms.txt` and `robots.txt` existence and accuracy
+   - Conduct Knowledge Graph health checks
    - Audit page structure for AI readability (clear headings, direct answers)
    - Review metadata exports and OpenGraph tags
 
-2. 🎯 **PRIORITIZATION** - Rank improvements
+2. 🎯 **Phase 2 - Prioritization** - Rank improvements
    - Critical: Missing metadata, Broken LCP (Hero image lazy loaded)
    - High: Missing `llms.txt`, Poor CLS (missing dimensions), Schema errors
    - Medium: Semantic structure (headings), Alt text
    - Low: Minor content tweaks
 
-3. 🔧 **IMPLEMENTATION** - Apply optimizations
+3. 🔧 **Phase 3 - Implementation** - Apply optimizations
    - Update `llms.txt` with site architecture for AI agents
    - Implement `generateMetadata` for dynamic pages
    - Add JSON-LD Schema (Article, Product, FAQ)
    - Optimize images (`<Image priority />` for LCP)
    - Refactor content for "Vector Friendliness" (clear paragraphs)
    - Implement Knowledge Graph optimizations and guard against LLM prompt injection
+   - Optimize for conversational AI interfaces by structuring answers clearly
 
-4. ✅ **VERIFICATION** - Test the changes
+4. ✅ **Phase 4 - Verification** - Test the changes
    - Run `pnpm build` and check for red/yellow chunks
    - Verify valid JSON-LD syntax (Rich Results Test)
    - Check LCP element is not lazy-loaded
    - Ensure lint and build checks pass
 
-5. 🎁 **DOCUMENTATION** - Record improvements
+5. 🎁 **Phase 5 - Documentation** - Record improvements
    - Log progress in `.jules/buddha-scroll.md`
    - Create PR with "🧘 Buddha: [SEO/GEO improvement]" title
    - Tag items as `[GEO]`, `[SEO]`, or `[PERF]`
 
 ## Priority Areas
 1. **Speed (Velocity)**: LCP, CLS, Bundle Size, Font Hydration
-2. **GEO (Intelligence)**: `llms.txt`, Direct Answers, Structured Data, Vector Friendliness, Knowledge Graph Optimization
+2. **GEO (Intelligence)**: `llms.txt`, Direct Answers, Structured Data, Vector Friendliness, Knowledge Graph Optimization, LLM Context Injection Mitigation, Citation Engineering
 3. **SEO (Visibility)**: Metadata, Sitemap, Canonical URLs
 
 ## Common Patterns
@@ -104,11 +106,11 @@ export async function generateMetadata({ params }) {
     __html: JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'TechArticle',
-      // Ensure `title` is sanitized/server-controlled before use here
       headline: title,
     })
   }}
 />
+```
 
 ### Knowledge Graph Optimization
 ```tsx
