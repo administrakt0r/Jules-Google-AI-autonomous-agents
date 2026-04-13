@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Agents](https://img.shields.io/badge/Agents-24-blue.svg)](#-agent-overview)
+[![Agents](https://img.shields.io/badge/Agents-25-blue.svg)](#-agent-overview)
 [![Jules.ai Compatible](https://img.shields.io/badge/Jules.ai-Compatible-purple.svg)](https://jules.ai)
 
 
@@ -439,6 +439,20 @@ agents:
 | Avg Fix Time | < 5 mins | ~3 mins | Time from detection to PR creation |
 | Regression Rate | 0% | 0% | Bugs introduced by agents |
 | Coverage Growth | +5% / mo | +6.2% | Month-over-month test coverage growth |
+
+### Detailed Agent Performance Metrics
+
+To ensure the highest quality of autonomous optimizations, we track the following performance metrics for our agents:
+
+| Metric | Description | Target |
+|--------|-------------|--------|
+| **Execution Time** | Average time taken by an agent to complete its daily process phases. | < 5 minutes |
+| **Success Rate** | Percentage of agent PRs that pass CI/CD and are successfully merged without human intervention. | > 90% |
+| **Linting Accuracy** | Ensuring that no new linting errors or warnings are introduced by the agent's code. | 100% |
+| **Revert Rate** | Percentage of agent-generated changes that require a rollback due to production issues. | < 1% |
+| **Test Coverage** | Percentage of code touched by the agent that is adequately covered by newly generated tests. | > 85% |
+
+Agents failing to meet these metrics will be flagged for prompt enhancement and logic review.
 
 ### Success Metrics
 
