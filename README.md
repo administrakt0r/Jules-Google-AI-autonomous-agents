@@ -439,6 +439,8 @@ agents:
 | Avg Fix Time | < 5 mins | ~3 mins | Time from detection to PR creation |
 | Regression Rate | 0% | 0% | Bugs introduced by agents |
 | Coverage Growth | +5% / mo | +6.2% | Month-over-month test coverage growth |
+| Optimization ROI | >200% | 240% | Value of compute saved vs. agent cost |
+| Time Saved | >20 hrs/mo | 25.5 hrs | Developer time saved per month |
 
 ### Success Metrics
 

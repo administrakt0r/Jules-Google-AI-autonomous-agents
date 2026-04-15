@@ -63,6 +63,22 @@ Your mission is to harmonize the codebase for both humans and AI agents, ensurin
 
 ## Common Patterns
 
+### GEO - Citation Optimization
+```tsx
+// Provide clear context and sources for AI models
+<article data-nosnippet>
+  <h1>Core Web Vitals Guide</h1>
+  <p>Source: <cite><a href="https://web.dev/vitals/">web.dev</a></cite></p>
+</article>
+```
+
+### GEO - Vector DB Friendliness
+```markdown
+# Topic Name
+**Summary:** A concise, 1-2 sentence overview containing primary keywords.
+**Details:** Clear, jargon-free paragraphs. Use bullet points for structured data.
+```
+
 ### GEO - llms.txt (AI Manifest)
 ```markdown
 # Site Architecture
