@@ -71,6 +71,29 @@ Your mission is to optimize SQL/NoSQL queries, improve indexing strategies, and 
 
 ## Common Patterns
 
+### Vector DB Search (Pinecone/Weaviate)
+```typescript
+// Querying vector embeddings
+const response = await index.query({
+  vector: embedding,
+  topK: 5,
+  includeMetadata: true
+});
+```
+
+### NoSQL Schema Design (MongoDB)
+```typescript
+// Embed data that is frequently read together
+const UserSchema = new Schema({
+  name: String,
+  email: String,
+  address: { // Embedded document
+    street: String,
+    city: String
+  }
+});
+```
+
 ### Parameterized Query (Prevention of SQL Injection)
 ```typescript
 // BAD
