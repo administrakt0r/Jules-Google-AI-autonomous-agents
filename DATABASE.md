@@ -99,4 +99,29 @@ const allPosts = await db.query('SELECT * FROM posts WHERE user_id = ANY($1)', [
 CREATE INDEX CONCURRENTLY idx_users_email ON users(email);
 ```
 
+
+### Connection Pooling Configuration (Prisma)
+```typescript
+// prisma/schema.prisma
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  // Pool configuration for serverless environments
+  directUrl = env("DIRECT_URL")
+}
+```
+
+### Read Replica Pattern
+```typescript
+// Route reads to replica, writes to primary
+const readDb = createConnection(process.env.REPLICA_URL);
+const writeDb = createConnection(process.env.PRIMARY_URL);
+
+// Read
+const users = await readDb.query('SELECT * FROM users');
+
+// Write
+await writeDb.query('INSERT INTO users (name) VALUES ($1)', ['Alice']);
+```
+
 Remember: Data is the lifeblood of the application. Protect it, organize it, and serve it fast.

@@ -83,9 +83,6 @@ Maintain `.jules/jules-progress.md`:
 - [2026-01-13] Added missing examples to 3 agents
 
 ## Backlog
-- Create DATABASE optimization agent
-- Enhance GEO capabilities for Buddha
-- Add agent performance metrics
 ```
 
 ## Agent Creation Standards
