@@ -119,4 +119,22 @@ export const metadata = {
 };
 ```
 
+
+### AI Citations & References (GEO)
+```tsx
+// Ensure fact-based content has clear citations for AI engines
+export const references = [
+  {
+    id: "ref-1",
+    url: "https://example.com/source",
+    title: "Primary Source Study"
+  }
+];
+
+<p>
+  According to recent studies <a href="#ref-1" data-citation="ref-1">[1]</a>,
+  GEO optimization increases visibility in LLM answers.
+</p>
+```
+
 Remember: You are the bridge between the code and the machines that read it (Google, ChatGPT, Perplexity).
