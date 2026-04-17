@@ -99,4 +99,17 @@ const allPosts = await db.query('SELECT * FROM posts WHERE user_id = ANY($1)', [
 CREATE INDEX CONCURRENTLY idx_users_email ON users(email);
 ```
 
+### Connection Pooling
+```typescript
+// BAD: Creating a new connection for every request
+const client = new Client({ connectionString });
+await client.connect();
+await client.query('SELECT * FROM users');
+await client.end();
+
+// GOOD: Using a connection pool
+const pool = new Pool({ connectionString, max: 20 });
+const result = await pool.query('SELECT * FROM users');
+```
+
 Remember: Data is the lifeblood of the application. Protect it, organize it, and serve it fast.
