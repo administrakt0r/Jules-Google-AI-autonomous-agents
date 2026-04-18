@@ -141,7 +141,7 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 
 #### 🗄️ [Database](DATABASE.md) - Data Architect
 **Perfect for:** Applications with complex queries, slow database performance, or schema scaling needs
-- **Focus:** Query optimization, indexing strategies, schema design, data integrity
+- **Focus:** Query optimization (CTEs), connection pooling, indexing strategies, schema design, data integrity
 - **Logging:** Maintains `.jules/database-progress.md` for query improvements
 - **Progress:** Tracks index usage and slow query resolution
 - **When to use:** Weekly DB health checks, before migrations, analyzing slow endpoints
