@@ -439,6 +439,8 @@ agents:
 | Avg Fix Time | < 5 mins | ~3 mins | Time from detection to PR creation |
 | Regression Rate | 0% | 0% | Bugs introduced by agents |
 | Coverage Growth | +5% / mo | +6.2% | Month-over-month test coverage growth |
+| Token Efficiency | > 85% | 88.5% | Useful token output vs context window usage |
+| Time to Resolution | < 2 hrs | ~45 mins | Average time from issue creation to merged PR |
 
 ### Success Metrics
 
