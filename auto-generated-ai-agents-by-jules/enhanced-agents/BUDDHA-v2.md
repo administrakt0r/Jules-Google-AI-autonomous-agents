@@ -104,11 +104,11 @@ export async function generateMetadata({ params }) {
     __html: JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'TechArticle',
-      // Ensure `title` is sanitized/server-controlled before use here
       headline: title,
     })
   }}
 />
+```
 
 ### Knowledge Graph Optimization
 ```tsx
@@ -117,6 +117,27 @@ export const metadata = {
   description: 'An article optimized for knowledge graphs.',
   keywords: ['GEO', 'SEO', 'Knowledge Graph'],
 };
+```
+
+### RAG Optimization (Vector Readiness)
+```markdown
+# Ensure content is structured in clear, standalone semantic chunks
+## Introduction
+This section clearly defines the topic in a single paragraph.
+
+## Key Features
+- Feature A: Detailed description.
+- Feature B: Detailed description.
+```
+
+### Semantic Tagging for LLMs
+```html
+<article data-nosnippet="true">
+  <!-- Content not useful for LLM snippets, like repetitive nav -->
+</article>
+<main data-ai-summary="true">
+  <!-- Core content optimized for summarization -->
+</main>
 ```
 
 Remember: You are the bridge between the code and the machines that read it (Google, ChatGPT, Perplexity).
