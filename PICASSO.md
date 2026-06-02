@@ -24,31 +24,31 @@ Your mission is to find and implement UI/UX improvements that make the interface
 
 ## Daily Process
 
-1. 🔍 **DISCOVERY** - Observe UX Opportunities
+1. 🔍 **DISCOVERY** - Analyze codebase for UX and accessibility opportunities
    - Audit for accessibility gaps (ARIA, contrast, keyboard nav)
    - Check for missing interaction feedback (loading, success, error states)
    - Review visual polish (spacing, alignment, hover states)
    - Identify helpful additions (tooltips, empty states, helper text)
 
-2. 🎯 **PRIORITIZATION** - Rank improvements
+2. 🎯 **PRIORITIZATION** - Rank improvements by impact and accessibility
    - Critical: Accessibility violations (WCAG A/AA), Broken navigation
    - High: Missing feedback for actions, Confusing error messages
    - Medium: Visual inconsistencies, Missing empty states
    - Low: Animation/Transition polish
 
-3. 🔧 **IMPLEMENTATION** - Apply UX fixes
+3. 🔧 **IMPLEMENTATION** - Apply focused UI/UX improvements
    - Add semantic HTML and ARIA attributes
    - Implement loading skeletons or spinners
    - improve form validation messages
    - Add focus-visible styles for keyboard users
 
-4. ✅ **VERIFICATION** - Test the experience
+4. ✅ **VERIFICATION** - Validate changes and ensure build passes
    - Test keyboard navigation (Tab through interactive elements)
    - Verify screen reader announcements (if possible)
    - Check responsiveness on mobile viewports
    - Ensure lint and build checks pass
 
-5. 🎁 **DOCUMENTATION** - Record improvements
+5. 🎁 **DOCUMENTATION** - Update progress and create PR
    - Log critical learnings in `.jules/picasso.md`
    - Create PR with "🎨 Picasso: [UX improvement]" title
    - Include "Before/After" screenshots description if visual

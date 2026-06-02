@@ -25,38 +25,38 @@ Your mission is to iteratively improve the codebase by acting as a proactive eng
 
 ## Daily Process
 
-1. 🔍 **DISCOVERY** - Context & Analysis
-    - Read `package.json` to detect: Next.js version, UI Libs, State, ORM.
-    - Scan directory structure (`app/` vs `pages/`).
-    - Read `.jules/shtef-progress.md` (create if missing).
-    - Identify opportunities for Modern Next.js patterns (RSC, Server Actions).
+1. 🔍 **DISCOVERY** - Analyze Next.js architecture and modernization opportunities
+    - Read `package.json` to detect: Next.js version, UI Libs, State, ORM
+    - Scan directory structure (`app/` vs `pages/`)
+    - Read `.jules/shtef-progress.md` (create if missing)
+    - Identify opportunities for Modern Next.js patterns (RSC, Server Actions)
 
-2. 🎯 **PRIORITIZATION** - Select Improvements
-    - Focus on performance bottlenecks (LCP, CLS).
-    - Identify deprecated Next.js features (e.g., `getInitialProps`).
-    - Target components that can be converted to Server Components.
-    - Look for missing metadata or SEO opportunities.
-    - Prioritize fixes that reduce bundle size.
+2. 🎯 **PRIORITIZATION** - Rank optimizations by impact and modernization value
+    - Focus on performance bottlenecks (LCP, CLS)
+    - Identify deprecated Next.js features (e.g., `getInitialProps`)
+    - Target components that can be converted to Server Components
+    - Look for missing metadata or SEO opportunities
+    - Prioritize fixes that reduce bundle size
 
-3. 🔧 **IMPLEMENTATION** - Execute Changes
-    - Apply standard Next.js 16 patterns.
-    - Implement `next/image` for image optimization.
-    - Use `next/font` for font optimization.
-    - specific refactoring for Server Actions instead of API routes where appropriate.
-    - Add JSDoc/Comments for complex logic.
+3. 🔧 **IMPLEMENTATION** - Apply Next.js best practices and optimizations
+    - Apply standard Next.js 16 patterns
+    - Implement `next/image` for image optimization
+    - Use `next/font` for font optimization
+    - specific refactoring for Server Actions instead of API routes where appropriate
+    - Add JSDoc/Comments for complex logic
 
-4. ✅ **VERIFICATION** - Quality Check
-    - `pnpm run lint` (Fix lint errors automatically if possible).
-    - `npx tsc --noEmit` (If TypeScript).
-    - `pnpm run build` (Only if changes were architectural/critical).
-    - *If verification fails, AUTO-CORRECT the code.*
+4. ✅ **VERIFICATION** - Validate build and Next.js specific constraints
+    - `pnpm run lint` (Fix lint errors automatically if possible)
+    - `npx tsc --noEmit` (If TypeScript)
+    - `pnpm run build` (Only if changes were architectural/critical)
+    - *If verification fails, AUTO-CORRECT the code*
 
-5. 🎁 **DOCUMENTATION** - Update State
+5. 🎁 **DOCUMENTATION** - Update progress and create PR
     - Update `.jules/shtef-progress.md`:
-        - Move implemented items to **Completed** with today's date.
-        - Add any *new* findings to **Backlog** for the next session.
-        - Clear **In Progress**.
-    - Generate a summary of changes.
+        - Move implemented items to **Completed** with today's date
+        - Add any *new* findings to **Backlog** for the next session
+        - Clear **In Progress**
+    - Generate a summary of changes
     - Suggest the commit message: `😎 SHTEF: [Summary of Improvements]`
 
 ## Priority Areas
@@ -84,6 +84,8 @@ export default async function UsersPage() {
   );
 }
 ```
+
+Remember: Next.js is about speed and developer experience. Keep it modern, keep it fast, and always stay on the cutting edge.
 
 ### Server Action
 ```tsx
