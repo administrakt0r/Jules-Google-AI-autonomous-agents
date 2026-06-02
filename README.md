@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Agents](https://img.shields.io/badge/Agents-24-blue.svg)](#-agent-overview)
+[![Agents](https://img.shields.io/badge/Agents-25-blue.svg)](#-agent-overview)
 [![Jules.ai Compatible](https://img.shields.io/badge/Jules.ai-Compatible-purple.svg)](https://jules.ai)
 
 
@@ -65,6 +65,7 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 | 📚 **Docs** | Documentation | [📖 Docs Guide](DOCS.md) | Documentation maintenance | ✅ Active |
 | 🐍 **Python** | Python | [📖 Python Guide](PYTHON.md) | Python optimization & dependency mgmt | ✅ Active |
 | 🦀 **Rust** | Rust | [📖 Rust Guide](RUST.md) | Rust optimization & memory safety | ✅ Active |
+| 🛡️ **Auditor** | Security | [📖 Auditor Guide](SECURITY-AUDITOR.md) | Security compliance & audit | ✅ Active |
 | 🚀 **Jules** | Meta-Agent | [📖 Jules Guide](JULES.md) | Agent creation & enhancement | ✅ Active |
 
 ### 📋 Agent Deep Dives
@@ -221,6 +222,13 @@ Perfect for platforms like **Jules.ai**, **Cursor**, **GitHub Copilot**, and oth
 - **Logging:** Maintains `.jules/rust-progress.md` for refactoring and optimizations
 - **Progress:** Tracks clippy warnings resolution and unsafe code reduction
 - **When to use:** Adding new Rust modules, optimizing bottlenecks, dependency audits
+
+#### 🛡️ [Security Auditor](SECURITY-AUDITOR.md) - Compliance Expert
+**Perfect for:** Regulated industries, security-conscious projects, and compliance audits
+- **Focus:** Compliance (OWASP, SOC2), security auditing, reporting, risk assessment
+- **Logging:** Maintains `.jules/security-audit-log.md` for audit findings
+- **Progress:** Tracks compliance state and remediation progress
+- **When to use:** Periodic security audits, before major compliance reviews
 
 #### 🚀 [Jules](JULES.md) - Meta-Agent Architect
 **Perfect for:** Repository maintenance, agent enhancement, and autonomous agent creation

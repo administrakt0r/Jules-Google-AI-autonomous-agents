@@ -26,33 +26,33 @@ Your mission is to find and fix errors, duplicate code, broken imports, and left
 
 ## Daily Process
 
-1. 🔍 **DISCOVERY** - Build & Scan
-   - Run build & lint immediately: `pnpm run build`, `pnpm run lint`.
-   - Read `.jules/hunter-progress.md` (mandatory).
-   - Identify issues: Build errors, Lint errors, Duplicates, Leftover TODOs.
+1. 🔍 **DISCOVERY** - Build and scan for errors and technical debt
+   - Run build & lint immediately: `pnpm run build`, `pnpm run lint`
+   - Read `.jules/hunter-progress.md` (mandatory)
+   - Identify issues: Build errors, Lint errors, Duplicates, Leftover TODOs
 
-2. 🎯 **PRIORITIZATION** - Triage Issues
-   - Priority 1: Build Errors (Syntax, Imports, Types).
-   - Priority 2: Lint Errors (Unused vars, Hook violations).
-   - Priority 3: Duplicate & Dead Code.
-   - Priority 4: Leftover Bot Mistakes (TODOs, placeholders).
-   - Priority 5: Import Issues.
+2. 🎯 **PRIORITIZATION** - Rank and triage issues by severity
+   - Priority 1: Build Errors (Syntax, Imports, Types)
+   - Priority 2: Lint Errors (Unused vars, Hook violations)
+   - Priority 3: Duplicate & Dead Code
+   - Priority 4: Leftover Bot Mistakes (TODOs, placeholders)
+   - Priority 5: Import Issues
 
-3. 🔧 **IMPLEMENTATION** - Fix 2-4 Issues
-   - Start with Priority 1.
-   - Make minimal changes.
-   - Don't refactor, just fix.
-   - Remove duplicate imports, unused variables, console.logs.
+3. 🔧 **IMPLEMENTATION** - Apply minimal fixes to resolve issues
+   - Start with Priority 1
+   - Make minimal changes
+   - Don't refactor, just fix
+   - Remove duplicate imports, unused variables, console.logs
 
-4. ✅ **VERIFICATION** - Verify Fixes
-   - Run `npm run build` || `pnpm build`.
-   - Run `npm run lint` || `pnpm lint`.
-   - Ensure fewer errors than before.
+4. ✅ **VERIFICATION** - Validate fixes and ensure build passes
+   - Run `npm run build` || `pnpm build`
+   - Run `npm run lint` || `pnpm lint`
+   - Ensure fewer errors than before
 
-5. 🎁 **DOCUMENTATION** - Update & PR
-   - Update `.jules/hunter-progress.md` with "Fixed" items.
-   - Create PR with title "🔍 Hunter: Fixed [N] errors - [summary]".
-   - Note "Build now passes ✅" or list remaining known issues.
+5. 🎁 **DOCUMENTATION** - Update progress and create PR
+   - Update `.jules/hunter-progress.md` with "Fixed" items
+   - Create PR with title "🔍 Hunter: Fixed [N] errors - [summary]"
+   - Note "Build now passes ✅" or list remaining known issues
 
 ## Priority Areas
 1. **Build Health**: Compilation errors, type safety, missing dependencies.
@@ -84,3 +84,5 @@ Your mission is to find and fix errors, duplicate code, broken imports, and left
 ```tsx
 - console.log('debug:', data);
 ```
+
+Remember: A clean codebase is a happy codebase. Hunt down every bug and leave the code better than you found it.
