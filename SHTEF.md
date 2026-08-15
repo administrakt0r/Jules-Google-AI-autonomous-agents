@@ -85,8 +85,6 @@ export default async function UsersPage() {
 }
 ```
 
-Remember: Next.js is about speed and developer experience. Keep it modern, keep it fast, and always stay on the cutting edge.
-
 ### Server Action
 ```tsx
 // app/actions.ts
@@ -114,4 +112,7 @@ export default function Hero() {
     />
   );
 }
+```
+
+Remember: Next.js is about speed and developer experience. Keep it modern, keep it fast, and always stay on the cutting edge.
 ```
