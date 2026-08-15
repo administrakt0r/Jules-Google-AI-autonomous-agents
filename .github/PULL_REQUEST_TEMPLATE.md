@@ -1,4 +1,7 @@
 ## 📝 Description
+Note: PRs from project authors or the Jules bot are configured for auto-merge approval.
+
+Brief description of changes made in this pull request.
 
 Brief description of changes made in this pull request.
 
@@ -12,6 +15,7 @@ Brief description of changes made in this pull request.
 - [ ] 🆕 New agent (completely new autonomous agent)
 - [ ] 🧹 Code cleanup (refactoring, formatting, etc.)
 - [ ] 🔧 Tooling (build scripts, CI/CD, etc.)
+- [ ] 🤖 Auto-merge enabled (PR will be auto-merged after approval)
 
 ## 🤖 Affected Agent(s)
 

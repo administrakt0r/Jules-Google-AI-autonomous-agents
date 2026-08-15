@@ -80,9 +80,27 @@ Your mission is to find and fix errors, duplicate code, broken imports, and left
 + const name = user?.name ?? 'Unknown';
 ```
 
+### Fix type error
+```tsx
+- const result = fetchData();
++ const result: DataResult = fetchData();
+```
+
 ### Remove console.log
 ```tsx
 - console.log('debug:', data);
+```
+
+### Fix unused import
+```tsx
+- import { useState } from 'react';
++ // useState not used, removed
+```
+
+### Fix duplicate test
+```tsx
+- it('should calculate total', () => { const cart = new Cart(); cart.add(itemA); const total = cart.total(); expect(total).toBe(100); });
++ it('should calculate total with item A', () => { const cart = new Cart(); cart.add(itemA); const total = cart.total(); expect(total).toBe(100); });
 ```
 
 Remember: A clean codebase is a happy codebase. Hunt down every bug and leave the code better than you found it.

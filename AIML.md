@@ -96,4 +96,55 @@ def set_seed(seed=42):
     random.seed(seed)
 ```
 
-Remember: An optimized model is useless if it's incorrect. Balance performance with accuracy and reproducibility.
+### Model Deployment (ONNX)
+```python
+import torch
+import torch.onnx
+
+# Export the model to ONNX format
+torch.onnx.export(
+    model,
+    example_input,
+    "model.onnx",
+    export_params=True,
+    opset_version=12,
+    do_constant_folding=True,
+    input_names=['input'],
+    output_names=['output'],
+    dynamic_axes={
+        'input': {0: 'batch_size'},
+        'output': {0: 'batch_size'}
+    }
+)
+```
+
+### Model Serving (TensorRT)
+```python
+import tensorrt as trt
+
+# Load optimized engine
+with trt.Runtime(logger) as runtime:
+    with open("model.engine", "rb") as f:
+        engine = runtime.deserialize_cuda_engine(f.read())
+    
+    with engine.create_execution_context() as context:
+        # Execute inference
+        bindings = [int(context.get_binding_shape(i)) for i in range(engine.num_io)]
+```
+
+### GPU/TPU Configuration
+```python
+# Enable TF32 for faster training on Ampere GPUs
+torch.backends.cuda.matmul.allow_tf32 = True
+
+# XLA configuration for TPU
+import jax
+jax.device_put(x)
+```
+
+### Pruning
+```python
+import torch.nn.utils.pruning as pruning
+
+# L1 unstructured pruning
+prune.l1_unstructured(model, name='weight', amount=0.2)

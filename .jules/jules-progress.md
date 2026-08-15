@@ -53,6 +53,8 @@
 - [2026-08-15] Added anti-prompt-injection scanning to JULES.md daily process
 - [2026-08-15] Added prompt quality analysis responsibility to JULES.md
 - [2026-08-15] Enforced "no versioned files" rule across all documentation
+- [2026-08-15] Enhanced HUNTER.md with additional patterns (type errors, test organization, console.log removal)
+- [2026-08-15] Enhanced AIML.md with deployment patterns (ONNX, TensorRT, GPU/TPU configuration, pruning)
 - [2026-04-04] Added PYTHON and JULES to local validation scripts
 - [2026-03-31] Fixed JULES agent formatting to adhere to standard template
 - [2026-01-13] Standardized agent formatting across all files (5-phase process)
