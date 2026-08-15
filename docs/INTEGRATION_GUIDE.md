@@ -21,8 +21,8 @@ Complete guide for integrating autonomous agents into your development workflow 
 
 ### Quick Start
 
-1. **Sign up for Jules.ai**
-   - Visit [jules.ai](https://jules.ai)
+1. **Sign up for Jules by Google**
+   - Visit [jules.google.com](https://jules.google.com)
    - Create your account
    - Connect your GitHub repositories
 
@@ -543,7 +543,7 @@ echo "Rollback completed for ${AGENT_NAME}"
 
 ### Platform Documentation
 
-- [Jules.ai Documentation](https://docs.jules.ai)
+- [Jules by Google](https://jules.google.com)
 - [Cursor Developer Guide](https://docs.cursor.sh)
 - [GitHub Copilot Documentation](https://docs.github.com/en/copilot)
 

@@ -336,7 +336,7 @@ const memo = useMemo(() => calc(data), [data]);
 
 ### External Resources
 
-- [Jules.ai Documentation](https://jules.ai/docs)
+- [Jules by Google](https://jules.google.com)
 - [AI Prompt Engineering Best Practices](https://www.promptingguide.ai/)
 - [Open Source Contribution Guide](https://opensource.guide/)
 
