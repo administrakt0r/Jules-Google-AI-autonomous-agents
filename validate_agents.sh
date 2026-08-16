@@ -1,59 +1,33 @@
-#!/bin/bash
-# validate_agents.sh - Local validation script for AI Agents
+#!/usr/bin/env bash
+set -euo pipefail
 
-AGENTS=("SENTINEL" "BOLT" "ATLAS" "BUDDHA" "HUNTER" "PICASSO" "SHTEF" "DOCKER" "KUBERNETES" "TERRAFORM" "DATABASE" "CICD" "MONITORING" "API" "MOBILE" "TESTING" "WEB3" "AIML" "IOT" "QUANTUM" "DOCS" "PYTHON" "JULES" "RUST" "SECURITY-AUDITOR")
+# The prompt registry is explicit so a missing or accidentally renamed specialist fails loudly.
+AGENTS=(SENTINEL SECURITY-AUDITOR BOLT HUNTER TESTING PICASSO BUDDHA DOCS ATLAS DATABASE API MONITORING CICD DOCKER KUBERNETES TERRAFORM MOBILE WEB3 AIML IOT QUANTUM PYTHON RUST SHTEF TODOist JULES)
+REQUIRED=("## Mission" "## Scope and Priorities" "## Repository Adapter" "## Boundaries" "## Lifecycle" "ORIENT" "DISCOVER" "ADAPT" "BASELINE" "PRIORITIZE" "IMPLEMENT" "VERIFY" "REVIEW" "DOCUMENT" "Detected" "Not detected" "Unknown")
+FORBIDDEN='npm (run|test|install)|pnpm|yarn|npx tsc|React|Next\.js|Prisma|PostgreSQL|Zod|Tailwind'
 
-REQUIRED_SECTIONS=("You are" "Your mission is to" "## Boundaries" "✅ **Always do:**" "⚠️ **Ask first:**" "🚫 **Never do:**")
-EMOJI_PATTERN="🤖|🛡️|⚡|🌐|🧘|🔍|🎨|😎|🐳|☸️|🏗️|🗄️|🔄|📊|🔌|📱|🧪|⚛️|📚|🐍|🚀|🦀"
-
-echo "🚀 Starting Agent Validation..."
-FAILED=0
-
+failed=0
 for agent in "${AGENTS[@]}"; do
-    FILE="${agent}.md"
-    echo "----------------------------------------"
-    echo "🤖 Validating $agent ($FILE)..."
-
-    # Check existence
-    if [ ! -f "$FILE" ]; then
-        echo "❌ File not found!"
-        FAILED=1
-        continue
+  file="${agent}.md"
+  if [[ ! -f "$file" ]]; then
+    printf 'FAIL %s: file missing\n' "$file"
+    failed=1
+    continue
+  fi
+  for section in "${REQUIRED[@]}"; do
+    if ! grep -Fq "$section" "$file"; then
+      printf 'FAIL %s: missing %s\n' "$file" "$section"
+      failed=1
     fi
-    echo "✅ File exists"
-
-    # Check sections
-    for section in "${REQUIRED_SECTIONS[@]}"; do
-        if ! grep -Fq "$section" "$FILE"; then
-            echo "❌ Missing section: '$section'"
-            FAILED=1
-        fi
-    done
-
-    # Check Emoji
-    if ! grep -Eq "$EMOJI_PATTERN" "$FILE"; then
-         echo "⚠️ Warning: No valid emoji found in content (Expected one of: $EMOJI_PATTERN)"
-         # Not failing for emoji warning to match workflow, but script output suggests warning.
-    else
-         echo "✅ Emoji found"
-    fi
-
-    # Check Size
-    SIZE=$(wc -c < "$FILE")
-    if [ "$SIZE" -lt 1000 ]; then
-        echo "⚠️ Warning: File size too small ($SIZE bytes)"
-    elif [ "$SIZE" -gt 50000 ]; then
-        echo "⚠️ Warning: File size too large ($SIZE bytes)"
-    else
-        echo "✅ File size OK ($SIZE bytes)"
-    fi
+  done
+  if grep -Eiq "$FORBIDDEN" "$file"; then
+    printf 'FAIL %s: contains fixed technology or command assumption\n' "$file"
+    failed=1
+  fi
 done
 
-echo "----------------------------------------"
-if [ $FAILED -eq 0 ]; then
-    echo "🎉 All agents passed validation!"
-    exit 0
-else
-    echo "❌ Some validations failed."
-    exit 1
+if (( failed )); then
+  printf 'Agent contract validation failed.\n'
+  exit 1
 fi
+printf 'All %d agent policies satisfy the portable architecture contract.\n' "${#AGENTS[@]}"

@@ -25,7 +25,7 @@ Brief description of changes made in this pull request.
 - [ ] 🧘 Buddha (SEO/GEO)
 - [ ] 🔍 Hunter (Debugging)
 - [ ] 🎨 Picasso (UX/UI)
-- [ ] 😎 Shtef (Next.js)
+- [ ] 😎 Shtef (framework adaptation, when detected)
 - [ ] Documentation/Guides
 - [ ] Tooling/Infrastructure
 

@@ -19,7 +19,7 @@ A clear and concise description of what the bug is.
 - [ ] 🧘 Buddha (SEO/GEO)
 - [ ] 🔍 Hunter (Debugging)
 - [ ] 🎨 Picasso (UX/UI)
-- [ ] 😎 Shtef (Next.js)
+- [ ] 😎 Shtef (framework adaptation, when detected)
 - [ ] Other (please specify):
 
 ## 📋 Current Behavior

@@ -14,62 +14,12 @@ jobs:
     name: Validate Agent Prompts
     runs-on: ubuntu-latest
     
-    strategy:
-      matrix:
-        agent: [SENTINEL, BOLT, ATLAS, BUDDHA, HUNTER, PICASSO, SHTEF, DOCKER, KUBERNETES, TERRAFORM, DATABASE, CICD, MONITORING, API, MOBILE, TESTING, WEB3, AIML, IOT, QUANTUM, DOCS, PYTHON, JULES, RUST, SECURITY-AUDITOR]
-    
     steps:
     - name: 📥 Checkout Repository
       uses: actions/checkout@v4
       
-    - name: 🔍 Validate Agent Structure
-      run: |
-        echo "🤖 Validating ${{ matrix.agent }} agent..."
-        
-        # Check if agent file exists
-        if [ ! -f "${{ matrix.agent }}.md" ]; then
-          echo "❌ Agent file ${{ matrix.agent }}.md not found"
-          exit 1
-        fi
-        
-        echo "✅ Agent file exists"
-        
-        # Check required sections
-        required_sections=(
-          "You are"
-          "Your mission is to"
-          "## Boundaries"
-          "✅ **Always do:**"
-          "⚠️ **Ask first:**"
-          "🚫 **Never do:**"
-        )
-        
-        for section in "${required_sections[@]}"; do
-          if ! grep -Fq "$section" "${{ matrix.agent }}.md"; then
-            echo "❌ Missing required section: $section"
-            exit 1
-          fi
-          echo "✅ Found section: $section"
-        done
-        
-        # Check for emoji in agent name
-        if ! grep -q "🤖\|🛡️\|⚡\|🌐\|🧘\|🔍\|🎨\|😎\|🐳\|☸️\|🏗️\|🗄️\|🔄\|📊\|🔌\|📱\|🧪\|⚛️\|📚\|🐍\|🚀\|🦀" "${{ matrix.agent }}.md"; then
-          echo "⚠️ Warning: Agent should have an emoji"
-        else
-          echo "✅ Agent has emoji"
-        fi
-        
-        # Check file size (should be substantial but not too large)
-        file_size=$(wc -c < "${{ matrix.agent }}.md")
-        if [ $file_size -lt 1000 ]; then
-          echo "⚠️ Warning: Agent file seems too small ($file_size bytes)"
-        elif [ $file_size -gt 50000 ]; then
-          echo "⚠️ Warning: Agent file seems too large ($file_size bytes)"
-        else
-          echo "✅ Agent file size is reasonable ($file_size bytes)"
-        fi
-        
-        echo "🎉 ${{ matrix.agent }} agent validation completed!"
+    - name: 🔍 Validate Agent Contract
+      run: ./validate_agents.sh
 
   validate-documentation:
     name: Validate Documentation

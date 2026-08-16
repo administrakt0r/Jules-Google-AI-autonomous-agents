@@ -30,6 +30,8 @@
 - [2026-01-13] QUANTUM - Quantum computing preparation agent
 
 ## Repository Updates
+- [2026-08-16] Replaced all 26 specialist prompts with portable policy, repository adapter, adaptive execution, evidence, safety, and idempotency architecture
+- [2026-08-16] Updated README, architecture, integration, FAQ, contribution guidance, validators, and workflow to govern the universal prompt contract
 - [2026-08-15] Cleaned up stale staging files in new-agents/ directory (5 files removed)
 - [2026-08-15] Ran full injection scan across all 25 agents (clean)
 - [2026-08-15] Ran full structural audit across all 25 agents (all pass)
@@ -43,11 +45,11 @@
 - [2026-03-06] Added TERRAFORM agent to validation workflows and README agent count
 - [2026-01-14] Updated README.md and workflow with PYTHON agent
 - [2026-01-14] Updated README.md with DOCS agent
-- [2026-01-13] Established auto-generated-ai-agents-by-jules directory structure
 - [2026-01-13] Updated GitHub Actions workflow to validate new agents and emojis
 
 ## Quality Improvements
-- [2026-08-15] Cleaned up stale staging files in auto-generated-ai-agents-by-jules/new-agents/
+- [2026-08-16] Validator confirms all 26 agents expose discovery states, the nine-stage lifecycle, and no fixed-stack command assumptions
+- [2026-08-15] Cleaned up stale generated staging artifacts before the generated archive was retired
 - [2026-08-15] Verified all 25 agents pass injection scan (zero vectors detected)
 - [2026-08-15] Fixed SHTEF.md Remember statement positioning (moved to end of file)
 - [2026-08-15] Added anti-prompt-injection scanning to JULES.md daily process
