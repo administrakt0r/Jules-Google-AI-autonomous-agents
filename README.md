@@ -25,6 +25,15 @@ Check out these awesome **FREE** services:
 
 ## 🚀 GET STARTED
 
+This repo contains **25 specialized AI agent prompts** for autonomous codebase optimization — security, performance, UX, SEO, debugging, and more.
+
+Instead of importing all of them, the prompt below will scan your project, pick the 5 most important agents, tailor them to your exact tech stack, and save everything into a `jules-prompts/` folder ready to use.
+
+**How to use:**
+1. Copy the one-liner below
+2. Paste it into any AI agent (Jules, Cursor, Copilot, ChatGPT, etc.)
+3. The agent will fetch the full setup prompt, scan your repo, and create curated prompts for you
+
 ```
 Fetch and act as per prompt from this URL: https://raw.githubusercontent.com/administrakt0r/Jules-Google-AI-autonomous-agents/main/docs/SETUP_PROMPT.md
 ```
