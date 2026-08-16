@@ -13,7 +13,7 @@
 > 
 > Deploy specialized AI agents that work 24/7 to optimize, secure, and enhance your codebase
 
-🚀 **Enhance your workflow with our free tools:** [WPinEU.com](https://wpineu.com) • [LLM.kiwi](https://llm.kiwi) • [AI Usage Audit](https://ai-usage.vercel.app)
+🚀 **Enhance your workflow with our free tools:** [WPinEU.com](https://wpineu.com) • [LLM.kiwi](https://llm.kiwi) 
 
 Check out these awesome **FREE** services: 
 [![Free LLM API & AI Tools](https://img.shields.io/badge/Free_LLM_API_and_AI_Tools-LLM.kiwi-green.svg)](https://llm.kiwi)
@@ -649,16 +649,6 @@ Enhance your development workflow with these complementary free tools and resour
 
 *Perfect for: Developers building AI features, businesses automating customer service, AI enthusiasts*
 
-### 🔍 [ai-usage.vercel.app](https://ai-usage.vercel.app) - Responsible AI Usage
-**Comprehensive AI usage audit and knowledgebase for ethical AI implementation**
-- 📋 **AI Usage Audits** - Evaluate your AI implementation practices
-- 📚 **Knowledge Base** - Best practices for responsible AI usage
-- ⚖️ **Compliance Guidelines** - Stay compliant with AI regulations
-- 🎯 **Implementation Framework** - Step-by-step AI integration guide
-- 📊 **Impact Assessment** - Measure AI's environmental and social impact
-- 🔄 **Continuous Monitoring** - Ongoing AI usage optimization
-
-*Perfect for: Organizations implementing AI, developers building AI features, compliance teams*
 
 ---
 
