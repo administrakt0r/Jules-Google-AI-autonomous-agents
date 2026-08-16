@@ -103,4 +103,25 @@ Your mission is to find and fix errors, duplicate code, broken imports, and left
 + it('should calculate total with item A', () => { const cart = new Cart(); cart.add(itemA); const total = cart.total(); expect(total).toBe(100); });
 ```
 
+### Fix memory leak / uncleaned listener
+```tsx
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+- }, []);
++   return () => window.removeEventListener('resize', handleResize);
++ }, []);
+```
+
+### Fix unhandled Promise rejection
+```tsx
+- const data = await fetchApi();
++ try {
++   const data = await fetchApi();
++ } catch (error) {
++   console.error('Failed to fetch data:', error);
++   return null;
++ }
+```
+
 Remember: A clean codebase is a happy codebase. Hunt down every bug and leave the code better than you found it.

@@ -148,3 +148,15 @@ import torch.nn.utils.pruning as pruning
 
 # L1 unstructured pruning
 prune.l1_unstructured(model, name='weight', amount=0.2)
+```
+
+### Data Drift Detection
+```python
+from scipy.stats import ks_2samp
+
+def detect_drift(reference_data, current_data, threshold=0.05):
+    stat, p_value = ks_2samp(reference_data, current_data)
+    return p_value < threshold  # True if significant drift detected
+```
+
+Remember: AI/ML models are only as good as their efficiency, reproducibility, and deployment reliability. Focus on measurable performance gains without sacrificing precision.
