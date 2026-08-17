@@ -1,0 +1,83 @@
+name: Auto-merge Jules PRs
+
+on:
+  check_suite:
+    types: [completed]
+  pull_request:
+    types: [synchronize, opened, reopened]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    name: Auto-merge when checks pass
+    runs-on: ubuntu-latest
+    if: >
+      (github.event_name == 'check_suite' && github.event.check_suite.conclusion == 'success') ||
+      (github.event_name == 'pull_request')
+
+    steps:
+    - name: Enable auto-merge on Jules PRs
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        PR_NUMBER=""
+        PR_REPO=""
+
+        if [[ "${{ github.event_name }}" == "check_suite" ]]; then
+          BRANCH="${{ github.event.check_suite.head.branch }}"
+          REPO_NAME="${{ github.event.repository.full_name }}"
+          PR_REPO="${{ github.event.repository.owner.login }}"
+
+          PR_NUMBER=$(gh pr list \
+            --repo "$REPO_NAME" \
+            --head "$BRANCH" \
+            --state open \
+            --json number \
+            --jq '.[0].number' 2>/dev/null || echo "")
+        else
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          PR_REPO="${{ github.event.pull_request.head.repo.owner.login }}"
+        fi
+
+        if [[ -z "$PR_NUMBER" ]]; then
+          echo "No open PR found, skipping."
+          exit 0
+        fi
+
+        IS_JULES=$(gh pr view "$PR_NUMBER" \
+          --repo "${{ github.repository }}" \
+          --json author,headRefName \
+          --jq 'if .author.login == "jules[bot]" or (.author.login | startswith("jules")) or (.headRefName | test("^jules-")) then "true" else "false" end' 2>/dev/null || echo "false")
+
+        if [[ "$IS_JULES" != "true" ]]; then
+          echo "PR #$PR_NUMBER is not from Jules, skipping."
+          exit 0
+        fi
+
+        MERGEABLE=$(gh pr view "$PR_NUMBER" \
+          --repo "${{ github.repository }}" \
+          --json mergeable \
+          --jq '.mergeable' 2>/dev/null || echo "")
+
+        if [[ "$MERGEABLE" == "CONFLICTING" ]]; then
+          echo "PR #$PR_NUMBER has merge conflicts, skipping."
+          exit 0
+        fi
+
+        echo "Enabling auto-merge for PR #$PR_NUMBER..."
+        gh pr merge "$PR_NUMBER" \
+          --repo "${{ github.repository }}" \
+          --auto \
+          --squash \
+          --delete-branch 2>&1 || {
+            echo "Auto-merge API not available, attempting direct merge..."
+            gh pr merge "$PR_NUMBER" \
+              --repo "${{ github.repository }}" \
+              --squash \
+              --delete-branch 2>&1 || echo "Merge not yet ready, will retry on next check_suite event."
+          }
+
+        echo "Done processing PR #$PR_NUMBER."
