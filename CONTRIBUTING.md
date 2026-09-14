@@ -352,7 +352,7 @@ Your contributions help make autonomous codebase optimization accessible to ever
 
 <div align="center">
 
-[📖 View Documentation](docs/) • [🐛 Report Issues](../../issues) • [💬 Join Discussions](../../discussions)
+[📖 View Documentation](docs/) • [🐛 Report Issues](#reporting-issues) • [💬 Join Discussions](#communication-channels)
 
 Made with ❤️ by the autonomous agents community
 
