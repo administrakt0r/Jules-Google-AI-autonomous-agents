@@ -132,4 +132,31 @@ Find existing progress storage first; create minimal tracking only if useful. Tr
 + }
 ```
 
+### Fix race condition with AbortController
+```tsx
+  useEffect(() => {
++   const controller = new AbortController();
+    async function fetchData() {
+-     const res = await fetch(url);
++     const res = await fetch(url, { signal: controller.signal });
+      const data = await res.json();
+      setData(data);
+    }
+    fetchData();
++   return () => controller.abort();
+  }, [url]);
+```
+
+### Fix boundary / empty array edge case
+```typescript
+- const latestItem = items[items.length - 1].value;
++ const latestItem = items.length > 0 ? items[items.length - 1]?.value : null;
+```
+
+### Fix flaky test async wait
+```typescript
+- await new Promise(resolve => setTimeout(resolve, 1000));
++ await waitFor(() => expect(screen.getByText('Loaded')).toBeInTheDocument());
+```
+
 Remember: A clean codebase is a happy codebase. Hunt down every bug and leave the code better than you found it.
