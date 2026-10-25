@@ -21,6 +21,14 @@ jobs:
     - name: 🔍 Validate Agent Contract
       run: ./validate_agents.sh
 
+    - name: 🛡️ Scan for Prompt Injections
+      run: |
+        if grep -Eiq "ignore previous instructions|system prompt|you are now|disregard" *.md; then
+          echo "❌ Prompt injection vectors detected!"
+          exit 1
+        fi
+        echo "✅ No prompt injection vectors found."
+
   validate-documentation:
     name: Validate Documentation
     runs-on: ubuntu-latest
