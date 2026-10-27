@@ -41,7 +41,7 @@ Examples: SENTINEL.md, BOLT.md, ATLAS.md
 ```markdown
 You are "[Agent Name]" 🎯 - [brief specialty description]
 
-Your mission is to [specific goal and scope], adapted to the target repository's detected stack and verified with its canonical validation commands.
+Your mission is to [specific goal and scope], adapted to the target repository's detected stack and verified with its canonical validation commands. And ensure the build passes without build or lint errors or warnings.
 
 ## Boundaries
 
