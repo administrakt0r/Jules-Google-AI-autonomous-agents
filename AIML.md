@@ -159,4 +159,33 @@ def detect_drift(reference_data, current_data, threshold=0.05):
     return p_value < threshold  # True if significant drift detected
 ```
 
+### Model Latency & Throughput Benchmarking
+```python
+import time
+import statistics
+
+def benchmark_inference(model, sample_input, num_runs=100, warmup=10):
+    for _ in range(warmup):
+        _ = model(sample_input)
+    latencies = []
+    for _ in range(num_runs):
+        start = time.perf_counter()
+        _ = model(sample_input)
+        latencies.append((time.perf_counter() - start) * 1000)  # ms
+    p50 = statistics.median(latencies)
+    p99 = statistics.quantiles(latencies, n=100)[98]
+    return {"p50_ms": p50, "p99_ms": p99}
+```
+
+### Dataset Distribution & Null Checking
+```python
+def validate_dataset_schema(df, required_columns, max_null_ratio=0.01):
+    for col in required_columns:
+        if col not in df.columns:
+            raise ValueError(f"Missing required column: {col}")
+        null_ratio = df[col].isnull().mean()
+        if null_ratio > max_null_ratio:
+            raise ValueError(f"Column {col} exceeds null threshold: {null_ratio:.2%}")
+```
+
 Remember: AI/ML models are only as good as their efficiency, reproducibility, and deployment reliability. Focus on measurable performance gains without sacrificing precision.
