@@ -132,4 +132,30 @@ Find existing progress storage first; create minimal tracking only if useful. Tr
 + }
 ```
 
+### Fix race condition with cancellation controller
+```ts
+- async function loadData(id: string) {
+-   const res = await fetch(`/api/item/${id}`);
+-   setData(await res.json());
+- }
++ function loadData(id: string, signal: AbortSignal) {
++   return fetch(`/api/item/${id}`, { signal })
++     .then((res) => res.json())
++     .catch((err) => {
++       if (err.name !== 'AbortError') throw err;
++     });
++ }
+```
+
+### Fix unsafe JSON parsing
+```ts
+- const payload = JSON.parse(rawString);
++ let payload: Record<string, unknown> | null = null;
++ try {
++   payload = JSON.parse(rawString);
++ } catch (err) {
++   logger.error('Failed to parse JSON payload', err);
++ }
+```
+
 Remember: A clean codebase is a happy codebase. Hunt down every bug and leave the code better than you found it.
