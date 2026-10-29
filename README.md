@@ -23,10 +23,10 @@ The standard lifecycle is **ORIENT → DISCOVER → ADAPT → BASELINE → PRIOR
 | Hunter | Defects and regressions | [HUNTER.md](HUNTER.md) |
 | Testing | Test quality and confidence | [TESTING.md](TESTING.md) |
 | Picasso | UX and accessibility | [PICASSO.md](PICASSO.md) |
-| Buddha | Search and discoverability | [BUDDHA.md](BUDDHA.md) |
+| Buddha | Search, discoverability, and GEO capabilities | [BUDDHA.md](BUDDHA.md) |
 | Docs | Documentation | [DOCS.md](DOCS.md) |
 | Atlas | General maintenance | [ATLAS.md](ATLAS.md) |
-| Database | Data systems | [DATABASE.md](DATABASE.md) |
+| Database | Data systems and query optimization | [DATABASE.md](DATABASE.md) |
 | API | Interfaces and contracts | [API.md](API.md) |
 | Monitoring | Observability | [MONITORING.md](MONITORING.md) |
 | CI/CD | Delivery automation | [CICD.md](CICD.md) |
