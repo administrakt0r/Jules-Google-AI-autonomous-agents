@@ -159,4 +159,32 @@ def detect_drift(reference_data, current_data, threshold=0.05):
     return p_value < threshold  # True if significant drift detected
 ```
 
+
+### Mixed Precision Training
+```python
+scaler = torch.cuda.amp.GradScaler()
+for data, target in dataloader:
+    optimizer.zero_grad()
+    with torch.cuda.amp.autocast():
+        output = model(data)
+        loss = criterion(output, target)
+    scaler.scale(loss).backward()
+    scaler.step(optimizer)
+    scaler.update()
+```
+
+### Gradient Accumulation
+```python
+accumulation_steps = 4
+for i, (data, target) in enumerate(dataloader):
+    output = model(data)
+    loss = criterion(output, target)
+    loss = loss / accumulation_steps
+    loss.backward()
+
+    if (i + 1) % accumulation_steps == 0:
+        optimizer.step()
+        optimizer.zero_grad()
+```
+
 Remember: AI/ML models are only as good as their efficiency, reproducibility, and deployment reliability. Focus on measurable performance gains without sacrificing precision.

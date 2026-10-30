@@ -132,4 +132,25 @@ Find existing progress storage first; create minimal tracking only if useful. Tr
 + }
 ```
 
+
+### Fix unhandled edge case
+```javascript
+- function process(data) { return data.value * 2; }
++ function process(data) {
++   if (!data || typeof data.value !== 'number') return 0;
++   return data.value * 2;
++ }
+```
+
+### Fix missing cleanup in event listener
+```javascript
+  function setupListener(element, callback) {
+    element.addEventListener('click', callback);
+-   return function() {};
++   return function cleanup() {
++     element.removeEventListener('click', callback);
++   };
+  }
+```
+
 Remember: A clean codebase is a happy codebase. Hunt down every bug and leave the code better than you found it.

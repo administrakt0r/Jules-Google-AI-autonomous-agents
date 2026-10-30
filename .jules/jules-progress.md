@@ -1,6 +1,8 @@
 # Jules Meta-Agent Progress Tracker
 
 ## Enhanced Agents
+- [2026-10-31] Enhanced HUNTER with general technology-agnostic defect patterns
+- [2026-10-31] Enhanced AIML with Mixed Precision Training and Gradient Accumulation patterns
 - [2026-10-31] Enhanced BUDDHA with GEO (Generative Engine Optimization) capabilities
 - [2026-10-31] Enhanced DATABASE with ORM N+1, slow queries, and caching optimizations
 - [2026-08-16] In-place enhanced HUNTER with memory leak listener cleanup and unhandled promise rejection patterns
@@ -34,6 +36,7 @@
 - [2026-01-13] QUANTUM - Quantum computing preparation agent
 
 ## Repository Updates
+- [2026-10-31] Added prompt injection security scan to `agents-test.yml`
 - [2026-11-01] Removed stale versioned files `BUDDHA-v2.md` and `DATABASE-v2.md` from `auto-generated-ai-agents-by-jules/enhanced-agents/`; performed daily prompt quality audit across all 26 agents
 - [2026-10-31] Appended strict build requirement to all 26 agent mission statements
 - [2026-10-25] Performed daily prompt quality audit and security scan across all 26 agents; generated update log `2026-10-25-daily-prompt-quality-audit.md`
@@ -234,5 +237,3 @@
 - None detected (full scan completed 2026-10-22)
 
 ## Backlog
-- Add automated prompt injection detection to CI workflow
-- Consider adding more patterns to HUNTER and AIML agents
