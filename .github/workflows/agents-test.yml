@@ -220,10 +220,34 @@ jobs:
         
         echo "🎉 Community health check completed!"
 
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: 🛡️ Check for Prompt Injection
+      run: |
+        echo "🛡️ Scanning for prompt injection vectors..."
+        # Check for zero-width characters and common injection vectors
+        if find . -name '*.md' -not -path './.git/*' -exec grep -P '[\x{200B}-\x{200D}\x{FEFF}]' {} +; then
+          echo "❌ Zero-width characters detected!"
+          exit 1
+        fi
+
+        if find . -name "*.md" -not -path "./.git/*" -exec grep -E -i "ignore previous instructions|forget all instructions|system prompt|bypass policy" {} +; then
+          echo "❌ Potential prompt injection detected!"
+          exit 1
+        fi
+
+        echo "✅ No prompt injection vectors found"
+
   build-summary:
     name: Build Summary
     runs-on: ubuntu-latest
-    needs: [validate-agents, validate-documentation, check-links, validate-templates, performance-check, community-health]
+    needs: [validate-agents, validate-documentation, check-links, validate-templates, performance-check, community-health, security-scan]
     if: always()
     
     steps:
@@ -238,10 +262,11 @@ jobs:
         echo "📋 Templates: ${{ needs.validate-templates.result }}"
         echo "⚡ Performance: ${{ needs.performance-check.result }}"
         echo "🌟 Community Health: ${{ needs.community-health.result }}"
+        echo "🛡️ Security Scan: ${{ needs.security-scan.result }}"
         echo ""
         
         # Overall status
-        if [[ "${{ needs.validate-agents.result }}" == "success" && "${{ needs.validate-documentation.result }}" == "success" && "${{ needs.validate-templates.result }}" == "success" && "${{ needs.community-health.result }}" == "success" ]]; then
+        if [[ "${{ needs.validate-agents.result }}" == "success" && "${{ needs.validate-documentation.result }}" == "success" && "${{ needs.validate-templates.result }}" == "success" && "${{ needs.community-health.result }}" == "success" && "${{ needs.security-scan.result }}" == "success" ]]; then
           echo "🎉 All critical checks passed! Repository is ready for public release."
         else
           echo "⚠️ Some checks failed. Please review and fix issues."
