@@ -164,7 +164,7 @@ jobs:
         echo "📊 Total files: $file_count"
         
         # Count agent files
-        agent_count=$(ls -1 *.md 2>/dev/null | grep -E '^[A-Z]+\.md$' | wc -l)
+        agent_count=$(ls -1 *.md 2>/dev/null | grep -E '^([A-Z0-9-]+|TODOist)\.md$' | grep -v -E '^(README|CONTRIBUTING)\.md$' | wc -l)
         echo "🤖 Agent files: $agent_count"
         
         # Check for very large files
