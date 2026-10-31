@@ -1,6 +1,8 @@
 # Jules Meta-Agent Progress Tracker
 
 ## Enhanced Agents
+- [2026-11-01] Enhanced DATABASE with query optimization and schema improvements patterns
+- [2026-11-01] Enhanced BUDDHA with GEO capabilities and discoverability patterns
 - [2026-10-31] Enhanced BUDDHA with GEO (Generative Engine Optimization) capabilities
 - [2026-10-31] Enhanced DATABASE with ORM N+1, slow queries, and caching optimizations
 - [2026-08-16] In-place enhanced HUNTER with memory leak listener cleanup and unhandled promise rejection patterns
@@ -234,5 +236,6 @@
 - None detected (full scan completed 2026-10-22)
 
 ## Backlog
+- Add agent performance metrics
 - Add automated prompt injection detection to CI workflow
 - Consider adding more patterns to HUNTER and AIML agents
