@@ -220,10 +220,47 @@ jobs:
         
         echo "🎉 Community health check completed!"
 
+  security-scan:
+    name: Security & Prompt Injection Scan
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: 🛡️ Scan for Zero-Width Characters & Bypass Phrases
+      run: |
+        echo "🛡️ Scanning for hidden characters and prompt injection vectors..."
+
+        failed=0
+
+        # Check for zero-width characters (\u200B, \u200C, \u200D, \uFEFF)
+        for file in $(find . -name "*.md" -not -path "./.git/*"); do
+          if grep -Pq '[\x{200B}\x{200C}\x{200D}\x{FEFF}]' "$file"; then
+            echo "❌ Zero-width character detected in $file"
+            failed=1
+          fi
+        done
+
+        # Check for common prompt injection bypass phrases
+        bypass_patterns="ignore all previous instructions|forget everything|you are no longer|bypass rules"
+        for file in $(find . -name "*.md" -not -path "./.git/*"); do
+          if grep -Ei "$bypass_patterns" "$file"; then
+            echo "❌ Prompt injection vector detected in $file"
+            failed=1
+          fi
+        done
+
+        if (( failed )); then
+          echo "❌ Security scan failed. Please remove hidden characters and bypass phrases."
+          exit 1
+        fi
+        echo "✅ Security scan passed!"
+
   build-summary:
     name: Build Summary
     runs-on: ubuntu-latest
-    needs: [validate-agents, validate-documentation, check-links, validate-templates, performance-check, community-health]
+    needs: [validate-agents, validate-documentation, check-links, validate-templates, performance-check, community-health, security-scan]
     if: always()
     
     steps:
@@ -238,10 +275,11 @@ jobs:
         echo "📋 Templates: ${{ needs.validate-templates.result }}"
         echo "⚡ Performance: ${{ needs.performance-check.result }}"
         echo "🌟 Community Health: ${{ needs.community-health.result }}"
+        echo "🛡️ Security Scan: ${{ needs.security-scan.result }}"
         echo ""
         
         # Overall status
-        if [[ "${{ needs.validate-agents.result }}" == "success" && "${{ needs.validate-documentation.result }}" == "success" && "${{ needs.validate-templates.result }}" == "success" && "${{ needs.community-health.result }}" == "success" ]]; then
+        if [[ "${{ needs.validate-agents.result }}" == "success" && "${{ needs.validate-documentation.result }}" == "success" && "${{ needs.validate-templates.result }}" == "success" && "${{ needs.community-health.result }}" == "success" && "${{ needs.security-scan.result }}" == "success" ]]; then
           echo "🎉 All critical checks passed! Repository is ready for public release."
         else
           echo "⚠️ Some checks failed. Please review and fix issues."
