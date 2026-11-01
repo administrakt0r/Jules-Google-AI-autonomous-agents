@@ -159,4 +159,39 @@ def detect_drift(reference_data, current_data, threshold=0.05):
     return p_value < threshold  # True if significant drift detected
 ```
 
+### Model Checkpointing
+```python
+import torch
+
+# Save model checkpoint during training
+torch.save({
+    'epoch': epoch,
+    'model_state_dict': model.state_dict(),
+    'optimizer_state_dict': optimizer.state_dict(),
+    'loss': loss,
+}, f"checkpoint_epoch_{epoch}.pt")
+```
+
+### Early Stopping
+```python
+class EarlyStopping:
+    def __init__(self, patience=7, min_delta=0):
+        self.patience = patience
+        self.min_delta = min_delta
+        self.counter = 0
+        self.best_loss = None
+        self.early_stop = False
+
+    def __call__(self, val_loss):
+        if self.best_loss is None:
+            self.best_loss = val_loss
+        elif val_loss > self.best_loss - self.min_delta:
+            self.counter += 1
+            if self.counter >= self.patience:
+                self.early_stop = True
+        else:
+            self.best_loss = val_loss
+            self.counter = 0
+```
+
 Remember: AI/ML models are only as good as their efficiency, reproducibility, and deployment reliability. Focus on measurable performance gains without sacrificing precision.

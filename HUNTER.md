@@ -132,4 +132,19 @@ Find existing progress storage first; create minimal tracking only if useful. Tr
 + }
 ```
 
+### Fix deprecated API usage
+```tsx
+- const element = document.createElement('div', { is: 'my-element' });
++ const element = document.createElement('my-element');
+```
+
+### Ensure exact test cleanup
+```tsx
+  afterEach(() => {
+-   cleanup();
++   document.body.innerHTML = '';
++   jest.clearAllMocks();
+  });
+```
+
 Remember: A clean codebase is a happy codebase. Hunt down every bug and leave the code better than you found it.
