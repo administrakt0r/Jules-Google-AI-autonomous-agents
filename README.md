@@ -51,3 +51,12 @@ Copy an individual prompt into an agent platform. It is intentionally stack-agno
 Run `./validate_agents.sh` to validate every root prompt. The workflow in `.github/workflows/agents-test.yml` runs the same contract checks plus documentation and link checks. No prompt assumes `npm`, `pnpm`, `yarn`, a fixed build command, `.jules/`, or a particular framework.
 
 See [docs/AGENT_ARCHITECTURE.md](docs/AGENT_ARCHITECTURE.md), [docs/BEST_PRACTICES.md](docs/BEST_PRACTICES.md), and [docs/INTEGRATION_GUIDE.md](docs/INTEGRATION_GUIDE.md) for the operating model.
+
+
+## Agent Performance Metrics
+
+To ensure efficiency and effectiveness, agents are evaluated using the following core metrics:
+- **Token Efficiency**: The ratio of tokens processed to the impact of the resulting codebase changes.
+- **Time to Resolution**: The average time an agent takes from baseline discovery to verified implementation.
+- **Validation Pass Rate**: The percentage of agent-generated changes that pass canonical validation without modification.
+- **Idempotency Adherence**: The frequency at which an agent converges correctly without redundant actions on repeated runs.
