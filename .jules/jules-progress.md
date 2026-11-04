@@ -1,6 +1,8 @@
 # Jules Meta-Agent Progress Tracker
 
 ## Enhanced Agents
+- [2026-11-04] In-place enhanced HUNTER with unclosed resource / file descriptor leak prevention and race condition / concurrency patterns
+- [2026-11-04] In-place enhanced AIML with model evaluation and regression benchmarking patterns
 - [2026-10-31] Enhanced BUDDHA with GEO (Generative Engine Optimization) capabilities
 - [2026-10-31] Enhanced DATABASE with ORM N+1, slow queries, and caching optimizations
 - [2026-08-16] In-place enhanced HUNTER with memory leak listener cleanup and unhandled promise rejection patterns
@@ -238,4 +240,5 @@
 
 ## Backlog
 - Add automated prompt injection detection to CI workflow
-- Consider adding more patterns to HUNTER and AIML agents
+- Add streaming inference and multi-modal pipeline patterns to AIML agent
+- Add flaky test detection and asynchronous retry patterns to TESTING agent

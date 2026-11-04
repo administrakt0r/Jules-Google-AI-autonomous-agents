@@ -132,4 +132,33 @@ Find existing progress storage first; create minimal tracking only if useful. Tr
 + }
 ```
 
+### Fix unclosed resource / file descriptor leak
+```ts
+- const stream = openResourceStream(resourcePath);
+- const payload = stream.readAll();
+- return parsePayload(payload);
++ const stream = openResourceStream(resourcePath);
++ try {
++   const payload = stream.readAll();
++   return parsePayload(payload);
++ } finally {
++   stream.close();
++ }
+```
+
+### Fix race condition / check-then-act concurrency defect
+```ts
+- if (!cache.has(key)) {
+-   const val = await computeExpensiveValue(key);
+-   cache.set(key, val);
+- }
++ let pending = inFlightRequests.get(key);
++ if (!pending) {
++   pending = computeExpensiveValue(key).finally(() => inFlightRequests.delete(key));
++   inFlightRequests.set(key, pending);
++ }
++ const val = await pending;
++ cache.set(key, val);
+```
+
 Remember: A clean codebase is a happy codebase. Hunt down every bug and leave the code better than you found it.
