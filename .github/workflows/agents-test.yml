@@ -220,10 +220,45 @@ jobs:
         
         echo "🎉 Community health check completed!"
 
+
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: 🛡️ Scan for Prompt Injections
+      run: |
+        echo "🛡️ Scanning for prompt injection vectors..."
+        # Check all markdown files
+        find . -name "*.md" -exec grep -Hn -i "ignore previous" {} \; > findings.txt || true
+        find . -name "*.md" -exec grep -Hn -i "forget all" {} \; >> findings.txt || true
+        find . -name "*.md" -exec grep -Hn -i "system prompt" {} \; >> findings.txt || true
+        find . -name "*.md" -exec grep -Hn -i "bypass" {} \; >> findings.txt || true
+
+        if [ -s findings.txt ]; then
+          echo "❌ Potential prompt injection vectors found:"
+          cat findings.txt
+          # intentionally failing
+          sh -c 'exit 1'
+        fi
+
+        # Check for zero-width characters (obfuscation)
+        echo "🔍 Checking for zero-width obfuscation..."
+        if find . -type f -name "*.md" -exec grep -P '[\x{200B}\x{200C}\x{200D}\x{FEFF}]' {} +; then
+          echo "❌ Zero-width characters detected!"
+          # intentionally failing
+          sh -c 'exit 1'
+        fi
+
+        echo "✅ Security scan completed successfully!"
+
   build-summary:
     name: Build Summary
     runs-on: ubuntu-latest
-    needs: [validate-agents, validate-documentation, check-links, validate-templates, performance-check, community-health]
+    needs: [validate-agents, validate-documentation, check-links, validate-templates, performance-check, community-health, security-scan]
     if: always()
     
     steps:

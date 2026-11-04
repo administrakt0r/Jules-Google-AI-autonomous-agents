@@ -176,4 +176,35 @@ def evaluate_model_metrics(model, test_loader, baseline_threshold=0.92):
     return {"accuracy": accuracy}
 ```
 
+
+### Streaming Inference
+```python
+import torch
+
+def generate_stream(model, inputs, max_length=100):
+    for _ in range(max_length):
+        outputs = model(inputs)
+        next_token = outputs.argmax(dim=-1)
+        yield next_token
+        inputs = torch.cat([inputs, next_token.unsqueeze(0)], dim=1)
+```
+
+### Multi-modal Pipeline
+```python
+import torch
+from PIL import Image
+
+def process_multimodal(text_model, image_model, text_input, image_path):
+    # Process text
+    text_features = text_model(text_input)
+
+    # Process image
+    img = Image.open(image_path)
+    image_features = image_model(img)
+
+    # Combine features
+    combined = torch.cat([text_features, image_features], dim=-1)
+    return combined
+```
+
 Remember: AI/ML models are only as good as their efficiency, reproducibility, and deployment reliability. Focus on measurable performance gains without sacrificing precision.
