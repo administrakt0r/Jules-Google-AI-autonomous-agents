@@ -43,6 +43,10 @@ All 26 agents meet the highest standard of portable policy design:
 25. `TODOist.md` - 10/10
 26. `JULES.md` - 10/10
 
+## Enhancements Completed
+- **HUNTER**: Enhanced in-place with unclosed resource / file descriptor leak prevention and race condition / concurrency check-then-act defect resolution patterns.
+- **AIML**: Enhanced in-place with model evaluation and regression benchmarking validation patterns.
+
 ## Security Incidents
 - **None Detected**: Zero prompt injection vectors or safety policy bypasses found.
 

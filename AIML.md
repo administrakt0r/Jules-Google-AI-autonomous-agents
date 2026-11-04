@@ -159,4 +159,21 @@ def detect_drift(reference_data, current_data, threshold=0.05):
     return p_value < threshold  # True if significant drift detected
 ```
 
+### Model Evaluation and Regression Benchmarking
+```python
+import numpy as np
+
+def evaluate_model_metrics(model, test_loader, baseline_threshold=0.92):
+    predictions, targets = [], []
+    for inputs, labels in test_loader:
+        outputs = model(inputs)
+        preds = outputs.argmax(axis=-1)
+        predictions.extend(preds)
+        targets.extend(labels)
+    accuracy = float(np.mean(np.array(predictions) == np.array(targets)))
+    if accuracy < baseline_threshold:
+        raise ValueError(f"Model accuracy regression detected: {accuracy:.4f} < {baseline_threshold:.4f}")
+    return {"accuracy": accuracy}
+```
+
 Remember: AI/ML models are only as good as their efficiency, reproducibility, and deployment reliability. Focus on measurable performance gains without sacrificing precision.
