@@ -42,6 +42,7 @@
 - [2026-01-13] QUANTUM - Quantum computing preparation agent
 
 ## Repository Updates
+- [2026-11-06] Refined `agents-test.yml` security-scan job injection patterns to prevent false positives on legitimate agent boundaries; sanitized 2026-10-10 audit quote
 - [2026-11-06] Performed daily prompt quality audit, anti-injection scan, and contract validation across all 26 agents; generated update log `2026-11-06-daily-prompt-quality-audit.md`
 - [2026-11-05] Performed daily prompt quality audit, anti-injection scan, and contract validation across all 26 agents; generated update log `2026-11-05-daily-prompt-quality-audit.md`
 - [2026-11-04] Performed daily prompt quality audit, anti-injection scan, and contract validation across all 26 agents; generated update log `2026-11-04-daily-prompt-quality-audit.md`

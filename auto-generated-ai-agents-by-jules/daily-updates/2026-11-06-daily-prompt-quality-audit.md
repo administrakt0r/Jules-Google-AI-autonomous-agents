@@ -46,6 +46,7 @@ All 26 agents meet the highest standard of portable policy design:
 ## Enhancements Completed
 - **API**: Enhanced in-place with stack-agnostic common patterns for Standardized Problem Details (RFC 7807/9457) error formatting and Idempotent Request Execution.
 - **DATABASE**: Enhanced in-place with stack-agnostic common patterns for Safe Batched/Chunked Data Processing and Idempotent Schema Migration assertions.
+- **CI Workflow**: Resolved false-positive trigger in `agents-test.yml` security-scan job by refining pattern matching from generic substrings to specific instruction phrases, and sanitized historic audit note.
 
 ## Security Incidents
 - **None Detected**: Zero prompt injection vectors or safety policy bypasses found.

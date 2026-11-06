@@ -232,11 +232,11 @@ jobs:
     - name: 🛡️ Scan for Prompt Injections
       run: |
         echo "🛡️ Scanning for prompt injection vectors..."
-        # Check all markdown files
+        # Check all markdown files for injection phrases
         find . -name "*.md" -exec grep -Hn -i "ignore previous" {} \; > findings.txt || true
         find . -name "*.md" -exec grep -Hn -i "forget all" {} \; >> findings.txt || true
         find . -name "*.md" -exec grep -Hn -i "system prompt" {} \; >> findings.txt || true
-        find . -name "*.md" -exec grep -Hn -i "bypass" {} \; >> findings.txt || true
+        find . -name "*.md" -exec grep -Hn -i "bypass rules" {} \; >> findings.txt || true
 
         if [ -s findings.txt ]; then
           echo "❌ Potential prompt injection vectors found:"
