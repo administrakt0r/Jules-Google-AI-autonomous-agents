@@ -233,10 +233,11 @@ jobs:
       run: |
         echo "🛡️ Scanning for prompt injection vectors..."
         # Check all markdown files
-        find . -name "*.md" -exec grep -Hn -i "ignore previous" {} \; > findings.txt || true
-        find . -name "*.md" -exec grep -Hn -i "forget all" {} \; >> findings.txt || true
-        find . -name "*.md" -exec grep -Hn -i "system prompt" {} \; >> findings.txt || true
-        find . -name "*.md" -exec grep -Hn -i "bypass" {} \; >> findings.txt || true
+        # We exclude daily-updates to avoid matching our own audit logs that note what they scanned for
+        find . -name "*.md" -not -path "*/daily-updates/*" -exec grep -Hn -i "ignore previous" {} \; > findings.txt || true
+        find . -name "*.md" -not -path "*/daily-updates/*" -exec grep -Hn -i "forget all" {} \; >> findings.txt || true
+        find . -name "*.md" -not -path "*/daily-updates/*" -exec grep -Hn -i "system prompt" {} \; >> findings.txt || true
+        find . -name "*.md" -not -path "*/daily-updates/*" -exec grep -Hn -i "bypass" {} \; >> findings.txt || true
 
         if [ -s findings.txt ]; then
           echo "❌ Potential prompt injection vectors found:"
