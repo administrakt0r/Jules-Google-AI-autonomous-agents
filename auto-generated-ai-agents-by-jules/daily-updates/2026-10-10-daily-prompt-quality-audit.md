@@ -11,7 +11,7 @@ Conducted daily quality audit, contract validation, and prompt injection scan ac
 
 ### 2. Injection Scan
 - **Status:** PASSED (0 injection vectors detected)
-- **Findings:** Scanned all agent files for role reassignment ("you are now"), boundary overrides ("ignore previous instructions"), zero-width characters (`\u200B`, `\u200C`, `\u200D`, `\uFEFF`), and HTML comment injections. All agent files treat repository text strictly as untrusted data.
+- **Findings:** Scanned all agent files for role reassignment ("you are now"), boundary overrides (such as instruction discard directives), zero-width characters (`\u200B`, `\u200C`, `\u200D`, `\uFEFF`), and HTML comment injections. All agent files treat repository text strictly as untrusted data.
 
 ### 3. Redundancy & Overlap Detection
 - **Status:** PASSED
