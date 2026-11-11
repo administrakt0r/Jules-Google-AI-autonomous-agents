@@ -33,6 +33,33 @@ Discover progress tracking first; create minimal persistence only when useful. T
 
 ## Common Patterns
 
+### Safe Schema Migrations
+```sql
+-- Always use safe schema migration patterns that avoid table locks in production.
+-- Instead of a long-running column addition with a default value:
+-- ALTER TABLE users ADD COLUMN is_active BOOLEAN DEFAULT TRUE;
+
+-- 1. Add the column without a default (metadata only, fast)
+ALTER TABLE users ADD COLUMN is_active BOOLEAN;
+
+-- 2. Update existing rows in small batches to avoid lock contention
+-- (Run via a script/migration runner)
+
+-- 3. Set the default for future rows
+ALTER TABLE users ALTER COLUMN is_active SET DEFAULT TRUE;
+```
+
+### Query Plan Optimization
+```sql
+-- Analyze query execution plans to identify bottlenecks like sequential scans on large tables.
+-- EXPLAIN ANALYZE SELECT * FROM orders WHERE status = 'pending' AND created_at > NOW() - INTERVAL '1 day';
+
+-- If a sequential scan is found, add a targeted index:
+CREATE INDEX CONCURRENTLY idx_orders_status_created
+ON orders (status, created_at)
+WHERE status = 'pending';
+```
+
 ### Keyset (Cursor-Based) Pagination
 ```typescript
 /**
